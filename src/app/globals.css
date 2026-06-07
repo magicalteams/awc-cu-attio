@@ -1,0 +1,728 @@
+@import "tailwindcss";
+
+/* ============================================================================
+   AWC × Magical Teams — Modern web tokens (2026)
+   Brief: container-first, fluid by clamp(), light-dark(), OKLCH ramps.
+   Mobile primary surface. Platform primitives over JavaScript.
+   ============================================================================ */
+
+/* ----------------------------------------------------------------------------
+   Token layer
+   ---------------------------------------------------------------------------- */
+@theme {
+  /* Brand — oklch so programmatic ramps stay perceptually even. */
+  --color-awc-orange:        oklch(67.6% 0.184 47.3);   /* ~ #F37021 */
+  --color-awc-orange-deep:   oklch(58.4% 0.176 44);     /* hover / press */
+  --color-awc-orange-soft:   oklch(95.5% 0.04 60);      /* fills, tags */
+  --color-awc-orange-glow:   oklch(67.6% 0.184 47.3 / 0.22);
+
+  --color-awc-blue:          oklch(58.4% 0.116 247);    /* ~ #2E75B6 */
+  --color-awc-blue-soft:     oklch(96.5% 0.025 247);
+  --color-awc-green:         oklch(50.6% 0.115 145);    /* ~ #2E7D32 */
+  --color-awc-green-soft:    oklch(96.5% 0.04 145);
+  --color-awc-red:           oklch(52.2% 0.16 27);      /* ~ #C0392B */
+  --color-awc-red-soft:      oklch(96.5% 0.025 27);
+
+  /* Neutrals — warm-leaning whites and a calm dark scheme.
+     light-dark() pairs these into one variable per surface (see :root below). */
+  --color-paper-l:        oklch(99.6% 0.004 80);
+  --color-paper-warm-l:   oklch(97% 0.018 65);
+  --color-paper-muted-l:  oklch(93% 0.014 70);
+  --color-sand-l:         oklch(95.5% 0.022 70);
+  --color-ink-l:          oklch(20% 0.018 264);
+  --color-ink-muted-l:    oklch(40% 0.015 260);
+  --color-ink-light-l:    oklch(60% 0.012 260);
+
+  --color-paper-d:        oklch(16% 0.018 264);
+  --color-paper-warm-d:   oklch(19% 0.02 60);
+  --color-paper-muted-d:  oklch(22% 0.018 264);
+  --color-sand-d:         oklch(22% 0.025 60);
+  --color-ink-d:          oklch(96% 0.006 80);
+  --color-ink-muted-d:    oklch(80% 0.012 70);
+  --color-ink-light-d:    oklch(64% 0.012 70);
+
+  /* Status — same earthy ramp */
+  --color-success:      oklch(50.6% 0.115 145);
+  --color-warning:      oklch(72% 0.155 70);
+  --color-danger:       oklch(58% 0.18 27);
+  --color-info:         oklch(58.4% 0.116 247);
+
+  /* Fluid type scale — clamp(floor, preferred, ceiling).
+     Floor anchored to 360px, ceiling to ~1440px. Ratio shifts from 1.2 (mobile)
+     to ~1.3 (desktop) so headings get more dramatic on big screens. */
+  --text-xs:   clamp(0.75rem,  0.71rem + 0.16vw, 0.8125rem);
+  --text-sm:   clamp(0.875rem, 0.84rem + 0.17vw, 0.9375rem);
+  --text-base: clamp(1rem,     0.96rem + 0.2vw,  1.0625rem);
+  --text-lg:   clamp(1.125rem, 1.06rem + 0.3vw,  1.25rem);
+  --text-xl:   clamp(1.375rem, 1.27rem + 0.45vw, 1.5625rem);
+  --text-2xl:  clamp(1.75rem,  1.55rem + 0.85vw, 2.125rem);
+  --text-3xl:  clamp(2.125rem, 1.78rem + 1.5vw,  2.875rem);
+  --text-4xl:  clamp(2.5rem,   1.9rem  + 2.6vw,  4rem);
+  --text-5xl:  clamp(3rem,     1.95rem + 4.5vw,  5.5rem);
+  --text-stat: clamp(2.5rem,   1.6rem  + 3.9vw,  4.75rem);
+
+  --leading-tight:   1.05;
+  --leading-snug:    1.2;
+  --leading-normal:  1.5;
+  --leading-relaxed: 1.65;
+
+  /* Fluid spacing scale */
+  --space-1: clamp(0.25rem, 0.24rem + 0.05vw, 0.3125rem);
+  --space-2: clamp(0.5rem,  0.48rem + 0.1vw,  0.625rem);
+  --space-3: clamp(0.75rem, 0.7rem  + 0.18vw, 0.9375rem);
+  --space-4: clamp(1rem,    0.92rem + 0.3vw,  1.25rem);
+  --space-5: clamp(1.25rem, 1.13rem + 0.45vw, 1.625rem);
+  --space-6: clamp(1.5rem,  1.32rem + 0.7vw,  2rem);
+  --space-8: clamp(2rem,    1.7rem  + 1.2vw,  2.75rem);
+  --space-10: clamp(2.5rem, 2.05rem + 1.7vw,  3.5rem);
+  --space-12: clamp(3rem,   2.4rem  + 2.4vw,  4.5rem);
+  --space-16: clamp(4rem,   3rem    + 4vw,    6.5rem);
+  --space-20: clamp(5rem,   3.5rem  + 5.5vw,  8rem);
+  --space-24: clamp(6rem,   4rem    + 7.5vw,  10rem);
+  --space-32: clamp(8rem,   5rem    + 10vw,   14rem);
+
+  /* Radii */
+  --radius-sm: 0.375rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1.25rem;
+  --radius-xl: 1.75rem;
+  --radius-pill: 999px;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px oklch(20% 0.015 264 / 0.06);
+  --shadow-md: 0 10px 28px -8px oklch(20% 0.015 264 / 0.16),
+               0 2px 6px oklch(20% 0.015 264 / 0.04);
+  --shadow-lg: 0 24px 48px -16px oklch(20% 0.015 264 / 0.2),
+               0 4px 12px oklch(20% 0.015 264 / 0.06);
+  --shadow-glow: 0 12px 32px var(--color-awc-orange-glow);
+
+  --ease-out: linear(
+    0, 0.013 1.4%, 0.052 2.8%, 0.207 6.5%, 0.466 12.2%, 0.683 18%, 0.835 24.4%,
+    0.926 31%, 0.974 38.5%, 0.997 49.8%, 1
+  );
+  --ease-spring: linear(
+    0, 0.057 4.4%, 0.221 9.5%, 0.461 15.2%, 0.738 21.5%, 1.043 29%,
+    1.171 33.7%, 1.226 38.6%, 1.221 43.5%, 1.149 48.6%, 1.034 54%,
+    0.999 56.7%, 0.985 60.7%, 0.992 66.4%, 1.004 71.4%, 1
+  );
+  --dur-fast:   180ms;
+  --dur-base:   280ms;
+  --dur-slow:   520ms;
+
+  /* Fonts — variable, loaded via next/font in layout.tsx */
+  --font-display: var(--font-fraunces, "Fraunces"), "Iowan Old Style", Georgia, serif;
+  --font-sans:    var(--font-inter, "Inter"), ui-sans-serif, system-ui, sans-serif;
+  --font-mono:    var(--font-mono-jb, "JetBrains Mono"), ui-monospace, "SFMono-Regular", Menlo, monospace;
+}
+
+/* ----------------------------------------------------------------------------
+   Semantic layer — every component references THESE, never raw ramps.
+   `light-dark()` lets us flip schemes with one declaration on :root.
+   ---------------------------------------------------------------------------- */
+:root {
+  /* Locked to light. The dashboard's aesthetic is warm paper + orange + ink —
+     letting it flip to dark made colored pills feel washed out and inverted
+     the section that was meant to be the page's one dark moment. */
+  color-scheme: light;
+
+  --bg-page:           light-dark(var(--color-paper-l),       var(--color-paper-d));
+  --bg-surface:        light-dark(var(--color-paper-l),       oklch(20% 0.018 264));
+  --bg-surface-warm:   light-dark(var(--color-paper-warm-l),  var(--color-paper-warm-d));
+  --bg-sunken:         light-dark(var(--color-paper-muted-l), var(--color-paper-muted-d));
+  --bg-sand:           light-dark(var(--color-sand-l),        var(--color-sand-d));
+  --bg-inverse:        light-dark(oklch(15% 0.02 264),        oklch(96% 0.006 80));
+
+  --text-primary:      light-dark(var(--color-ink-l),         var(--color-ink-d));
+  --text-secondary:    light-dark(var(--color-ink-muted-l),   var(--color-ink-muted-d));
+  --text-muted:        light-dark(var(--color-ink-light-l),   var(--color-ink-light-d));
+  --text-on-accent:    var(--color-paper-l);
+  --text-on-inverse:   light-dark(var(--color-paper-l),       var(--color-ink-l));
+  --text-link:         var(--color-awc-orange);
+
+  --border-subtle:     light-dark(oklch(91% 0.012 70),  oklch(28% 0.014 264));
+  --border-default:    light-dark(oklch(82% 0.014 70),  oklch(34% 0.014 264));
+  --border-strong:     light-dark(oklch(60% 0.014 70),  oklch(50% 0.014 264));
+
+  --accent-primary:        var(--color-awc-orange);
+  --accent-primary-hover:  var(--color-awc-orange-deep);
+  --accent-primary-soft:   light-dark(var(--color-awc-orange-soft), oklch(28% 0.07 50));
+  --accent-blue:           var(--color-awc-blue);
+  --accent-blue-soft:      light-dark(var(--color-awc-blue-soft),  oklch(26% 0.045 247));
+  --accent-green:          var(--color-awc-green);
+  --accent-green-soft:     light-dark(var(--color-awc-green-soft), oklch(26% 0.05 145));
+  --accent-red:            var(--color-awc-red);
+  --accent-red-soft:       light-dark(var(--color-awc-red-soft),   oklch(28% 0.06 27));
+
+  --status-success:      var(--color-success);
+  --status-warning:      var(--color-warning);
+  --status-danger:       var(--color-danger);
+  --status-info:         var(--color-info);
+
+  --focus-ring: var(--color-awc-orange);
+
+  --measure: 68ch;
+  --shell-gutter: clamp(1rem, 1rem + 2vw, 3rem);
+}
+
+
+/* ----------------------------------------------------------------------------
+   Base
+   ---------------------------------------------------------------------------- */
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  scroll-behavior: smooth;
+  scroll-padding-block-start: clamp(4rem, 6vh, 6rem);
+  hanging-punctuation: first last;
+}
+
+body {
+  background: var(--bg-page);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  line-height: var(--leading-normal);
+  font-feature-settings: "cv11", "ss01", "ss03";
+  font-optical-sizing: auto;
+  /* Use 100svh-aware decorative full-bleed sections (set per component);
+     body itself doesn't need a height. */
+  text-wrap: pretty;
+}
+
+::selection {
+  background: var(--accent-primary);
+  color: var(--text-on-accent);
+}
+
+:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 3px;
+  border-radius: var(--radius-sm);
+}
+
+/* Avoid focus rings on click (button drag), keep them on keyboard. */
+:focus:not(:focus-visible) { outline: none; }
+
+img, svg, video, canvas { display: block; max-width: 100%; height: auto; }
+button { font: inherit; color: inherit; }
+
+/* ----------------------------------------------------------------------------
+   Preference queries — global, base-layer
+   ---------------------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 1ms !important;
+    scroll-behavior: auto !important;
+  }
+  /* kill scroll-driven and view-timeline animations entirely */
+  :root { --vt-enabled: 0; }
+}
+
+@media (prefers-contrast: more) {
+  :root {
+    --border-subtle:  light-dark(oklch(75% 0.015 70),  oklch(55% 0.014 264));
+    --border-default: light-dark(oklch(55% 0.014 70),  oklch(65% 0.014 264));
+    --text-secondary: light-dark(oklch(30% 0.015 260), oklch(86% 0.012 70));
+  }
+}
+
+@media (forced-colors: active) {
+  /* Replace shadow-only affordances with borders that survive HCM. */
+  .surface, .surface-card, .stat-card, .benefit-card, .outstanding-card,
+  .next-card, .filter-pill, .btn-primary, .btn-ghost {
+    border: 1px solid CanvasText !important;
+    background: Canvas !important;
+    color: CanvasText !important;
+    box-shadow: none !important;
+  }
+  .tag { border: 1px solid CanvasText !important; }
+}
+
+/* ----------------------------------------------------------------------------
+   Type classes
+   ---------------------------------------------------------------------------- */
+.hl-overline {
+  font-family: var(--font-sans);
+  font-size: var(--text-xs);
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent-primary);
+}
+.hl-overline-muted {
+  font-family: var(--font-sans);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.hl-display {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: var(--text-5xl);
+  line-height: 0.98;
+  letter-spacing: -0.025em;
+  color: var(--text-primary);
+  text-wrap: balance;
+  font-variation-settings: "opsz" 144;
+}
+.hl-display em {
+  font-style: italic;
+  font-weight: 400;
+  color: var(--accent-primary);
+}
+
+.hl-h2 {
+  font-family: var(--font-display);
+  font-size: var(--text-4xl);
+  font-weight: 500;
+  line-height: 1.02;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+  text-wrap: balance;
+  font-variation-settings: "opsz" 96;
+}
+.hl-h2 em {
+  font-style: italic;
+  font-weight: 400;
+  color: var(--accent-primary);
+}
+
+.hl-h3 {
+  font-family: var(--font-sans);
+  font-size: var(--text-2xl);
+  font-weight: 700;
+  line-height: var(--leading-snug);
+  letter-spacing: -0.012em;
+  color: var(--text-primary);
+  text-wrap: balance;
+}
+
+.hl-h4 {
+  font-family: var(--font-sans);
+  font-size: var(--text-lg);
+  font-weight: 600;
+  line-height: var(--leading-snug);
+  color: var(--text-primary);
+  letter-spacing: -0.006em;
+}
+
+.hl-lead {
+  font-size: var(--text-lg);
+  line-height: var(--leading-relaxed);
+  color: var(--text-secondary);
+  max-inline-size: 60ch;
+}
+.hl-body {
+  font-size: var(--text-base);
+  line-height: var(--leading-relaxed);
+  color: var(--text-secondary);
+  max-inline-size: var(--measure);
+}
+.hl-body p + p { margin-block-start: 0.85em; }
+.hl-body strong { color: var(--text-primary); font-weight: 600; }
+.hl-body code {
+  font-family: var(--font-mono);
+  font-size: 0.9em;
+  background: var(--bg-sunken);
+  padding-inline: 0.4em;
+  padding-block: 0.1em;
+  border-radius: var(--radius-sm);
+  color: var(--accent-primary);
+  font-weight: 500;
+}
+.hl-body ul, .hl-body ol { margin-inline-start: 1.25rem; }
+.hl-body ul { list-style: disc; }
+.hl-body ol { list-style: decimal; }
+.hl-body li + li { margin-block-start: 0.4em; }
+.hl-body li::marker { color: var(--accent-primary); }
+
+.hl-small {
+  font-size: var(--text-sm);
+  line-height: var(--leading-normal);
+  color: var(--text-muted);
+}
+.hl-label {
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--text-secondary);
+  letter-spacing: -0.002em;
+}
+.hl-mono {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+  font-variant-numeric: tabular-nums;
+}
+.hl-stat {
+  font-family: var(--font-display);
+  font-size: var(--text-stat);
+  font-weight: 600;
+  line-height: 0.92;
+  letter-spacing: -0.035em;
+  color: var(--accent-primary);
+  font-variant-numeric: tabular-nums;
+  font-variation-settings: "opsz" 144;
+}
+
+/* ----------------------------------------------------------------------------
+   Shell — full-bleed grid system
+   Use grid-template-columns "full + content + full" so any section can break
+   out of the gutter with a single `grid-column: full-start / full-end`.
+   ---------------------------------------------------------------------------- */
+.shell {
+  display: grid;
+  grid-template-columns:
+    [full-start]
+    minmax(var(--shell-gutter), 1fr)
+    [content-start]
+    min(100%, 78rem)
+    [content-end]
+    minmax(var(--shell-gutter), 1fr)
+    [full-end];
+}
+.shell > * { grid-column: content; }
+.shell > .full-bleed { grid-column: full; }
+
+/* Quick container without the shell grid */
+.container-calm {
+  inline-size: 100%;
+  max-inline-size: 78rem;
+  margin-inline: auto;
+  padding-inline: var(--shell-gutter);
+}
+
+.section-pad {
+  padding-block: var(--space-24);
+}
+
+.measure      { max-inline-size: 65ch; }
+.measure-wide { max-inline-size: 80ch; }
+
+/* Decorative editorial accents */
+.brush {
+  background-image:
+    linear-gradient(180deg, transparent 62%,
+      color-mix(in oklch, var(--accent-primary) 25%, transparent) 62%);
+  padding-inline: 0.05em;
+}
+
+/* ----------------------------------------------------------------------------
+   Component utilities
+   ---------------------------------------------------------------------------- */
+
+/* Card surface — base. Components add their own container + spacing. */
+.surface {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  transition:
+    box-shadow var(--dur-base) var(--ease-out),
+    border-color var(--dur-base) var(--ease-out),
+    transform var(--dur-base) var(--ease-out);
+}
+@media (hover: hover) and (pointer: fine) {
+  .surface:hover {
+    box-shadow: var(--shadow-md);
+    border-color: color-mix(in oklch, var(--accent-primary) 30%, var(--border-default));
+    transform: translateY(-2px);
+  }
+}
+
+.surface-warm {
+  background: var(--bg-surface-warm);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+}
+
+.divider-subtle {
+  block-size: 1px;
+  background: var(--border-subtle);
+  border: 0;
+}
+
+/* Pill tags */
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+  font-size: var(--text-xs);
+  font-weight: 600;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  padding-block: 0.3em;
+  padding-inline: 0.7em;
+  border-radius: var(--radius-pill);
+  border: 1px solid transparent;
+  white-space: nowrap;
+}
+.tag-orange { color: var(--accent-primary-hover); background: var(--accent-primary-soft); border-color: color-mix(in oklch, var(--accent-primary) 20%, transparent); }
+.tag-blue   { color: var(--accent-blue); background: var(--accent-blue-soft); border-color: color-mix(in oklch, var(--accent-blue) 20%, transparent); }
+.tag-green  { color: var(--accent-green); background: var(--accent-green-soft); border-color: color-mix(in oklch, var(--accent-green) 20%, transparent); }
+.tag-red    { color: var(--accent-red); background: var(--accent-red-soft); border-color: color-mix(in oklch, var(--accent-red) 20%, transparent); }
+.tag-warn   { color: var(--status-warning); background: color-mix(in oklch, var(--status-warning) 14%, transparent); border-color: color-mix(in oklch, var(--status-warning) 30%, transparent); }
+.tag-ink    { color: var(--text-on-inverse); background: var(--bg-inverse); border-color: var(--bg-inverse); }
+
+/* Buttons */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  font-size: var(--text-sm);
+  font-weight: 600;
+  text-decoration: none;
+  color: var(--text-on-accent);
+  background: var(--accent-primary);
+  padding-block: 0.75em;
+  padding-inline: 1.25em;
+  border-radius: var(--radius-pill);
+  border: 0;
+  transition: background var(--dur-base) var(--ease-out),
+              box-shadow var(--dur-base) var(--ease-out),
+              transform var(--dur-base) var(--ease-out);
+  box-shadow: var(--shadow-sm);
+  min-block-size: 44px;
+  cursor: pointer;
+}
+.btn-primary:hover, .btn-primary:focus-visible {
+  background: var(--accent-primary-hover);
+  box-shadow: var(--shadow-glow);
+  transform: translateY(-1px);
+}
+.btn-primary:active { transform: translateY(0); }
+
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  font-size: var(--text-sm);
+  font-weight: 600;
+  text-decoration: none;
+  color: var(--text-primary);
+  background: transparent;
+  padding-block: 0.75em;
+  padding-inline: 1.25em;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--border-default);
+  transition: background var(--dur-base) var(--ease-out),
+              border-color var(--dur-base) var(--ease-out),
+              color var(--dur-base) var(--ease-out);
+  min-block-size: 44px;
+  cursor: pointer;
+}
+@media (hover: hover) and (pointer: fine) {
+  .btn-ghost:hover {
+    background: var(--bg-sunken);
+    border-color: var(--text-primary);
+  }
+}
+
+/* ----------------------------------------------------------------------------
+   Atmosphere — backgrounds with point of view
+   ---------------------------------------------------------------------------- */
+.bg-dots {
+  background-image: radial-gradient(circle,
+    color-mix(in oklch, var(--text-primary) 10%, transparent) 1px,
+    transparent 1px);
+  background-size: clamp(20px, 3vw, 28px) clamp(20px, 3vw, 28px);
+}
+
+.bg-grid {
+  background-image:
+    linear-gradient(color-mix(in oklch, var(--text-primary) 5%, transparent) 1px, transparent 1px),
+    linear-gradient(90deg, color-mix(in oklch, var(--text-primary) 5%, transparent) 1px, transparent 1px);
+  background-size: clamp(40px, 5vw, 56px) clamp(40px, 5vw, 56px);
+}
+
+/* Soft warm gradient — uses two radial smears at angles. */
+.bg-warm-gradient {
+  background:
+    radial-gradient(ellipse 70% 50% at 12% 0%,
+      color-mix(in oklch, var(--accent-primary) 14%, transparent),
+      transparent 65%),
+    radial-gradient(ellipse 55% 40% at 100% 100%,
+      color-mix(in oklch, var(--accent-blue) 12%, transparent),
+      transparent 60%),
+    var(--bg-page);
+}
+
+/* Grain — a CSS-only noise layer using radial-gradients in svg-as-data-url.
+   Cheap because it's a single repeated pattern, no decoding pipeline. */
+.bg-grain::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.55;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.5 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+  background-size: 160px 160px;
+}
+
+/* Subtle radial spotlight that fades to transparent. */
+.bg-spotlight {
+  background: radial-gradient(ellipse 80% 60% at 50% 0%,
+    color-mix(in oklch, var(--accent-primary) 18%, transparent),
+    transparent 70%);
+}
+
+/* Mesh gradient — multiple oklch radial smears, blended */
+.bg-mesh {
+  background:
+    radial-gradient(at 18% 22%, oklch(72% 0.18 50 / 0.35), transparent 55%),
+    radial-gradient(at 82% 12%, oklch(70% 0.13 245 / 0.3),  transparent 55%),
+    radial-gradient(at 65% 86%, oklch(72% 0.13 145 / 0.25), transparent 55%),
+    radial-gradient(at 22% 88%, oklch(62% 0.16 30 / 0.25),  transparent 55%),
+    var(--bg-page);
+  background-blend-mode: screen, screen, screen, screen, normal;
+}
+
+/* ----------------------------------------------------------------------------
+   Scroll-driven reveals — CSS-only, off-main-thread.
+   Replaces JS scroll-listener fades for the simple "fade up on enter" case.
+   ---------------------------------------------------------------------------- */
+@supports (animation-timeline: view()) {
+  .reveal {
+    animation: fade-rise both;
+    animation-timeline: view();
+    animation-range: entry 0% entry 50%;
+  }
+  .reveal-soft {
+    animation: fade-soft both;
+    animation-timeline: view();
+    animation-range: entry 5% entry 70%;
+  }
+  @keyframes fade-rise {
+    from { opacity: 0; transform: translateY(28px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fade-soft {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+  /* parallax — slower than scroll */
+  .parallax-slow {
+    animation: parallax-slow both;
+    animation-timeline: view();
+    animation-range: cover;
+  }
+  @keyframes parallax-slow {
+    from { transform: translateY(0); }
+    to   { transform: translateY(-12%); }
+  }
+}
+
+/* Page-edge progress bar wired to the document scroll. */
+@supports (animation-timeline: scroll()) {
+  .scroll-progress {
+    transform-origin: 0 50%;
+    animation: scroll-progress linear both;
+    animation-timeline: scroll(root);
+  }
+  @keyframes scroll-progress {
+    from { transform: scaleX(0); }
+    to   { transform: scaleX(1); }
+  }
+}
+
+/* ----------------------------------------------------------------------------
+   Native <details> accordion — used by ExpandableItem
+   ::details-content + interpolate-size lets us transition height: auto.
+   Falls back to instant open/close in older engines.
+   ---------------------------------------------------------------------------- */
+@supports (interpolate-size: allow-keywords) {
+  :root { interpolate-size: allow-keywords; }
+  details.accordion::details-content {
+    block-size: 0;
+    overflow-y: clip;
+    opacity: 0;
+    transition:
+      block-size var(--dur-base) var(--ease-out),
+      content-visibility var(--dur-base) allow-discrete,
+      opacity var(--dur-base) var(--ease-out);
+  }
+  details.accordion[open]::details-content {
+    block-size: auto;
+    opacity: 1;
+  }
+}
+
+details.accordion > summary {
+  list-style: none;
+  cursor: pointer;
+  user-select: none;
+}
+details.accordion > summary::-webkit-details-marker { display: none; }
+details.accordion > summary::marker { display: none; }
+details.accordion > summary:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 4px;
+  border-radius: var(--radius-md);
+}
+
+/* The "+" / "x" indicator rotates 45° when open. */
+.accordion-indicator {
+  display: inline-grid;
+  place-items: center;
+  inline-size: 36px;
+  block-size: 36px;
+  border-radius: 10px;
+  background: var(--bg-sunken);
+  border: 1px solid var(--border-default);
+  color: var(--text-secondary);
+  font-size: 1.2rem;
+  line-height: 1;
+  flex-shrink: 0;
+  transition:
+    background var(--dur-base) var(--ease-out),
+    color var(--dur-base) var(--ease-out),
+    border-color var(--dur-base) var(--ease-out),
+    transform var(--dur-base) var(--ease-out);
+}
+details.accordion[open] .accordion-indicator {
+  background: var(--accent-primary);
+  border-color: var(--accent-primary);
+  color: var(--text-on-accent);
+  transform: rotate(45deg);
+}
+
+/* ----------------------------------------------------------------------------
+   View Transitions hook — used by topic filter on the build section.
+   The component calls document.startViewTransition() and CSS does the rest.
+   ---------------------------------------------------------------------------- */
+@supports (view-transition-name: a) {
+  ::view-transition-old(filter-grid),
+  ::view-transition-new(filter-grid) {
+    animation-duration: 320ms;
+    animation-timing-function: var(--ease-out);
+  }
+  ::view-transition-old(filter-grid) {
+    animation-name: -ua-view-transition-fade-out;
+  }
+  ::view-transition-new(filter-grid) {
+    animation-name: -ua-view-transition-fade-in;
+  }
+}
+
+/* ----------------------------------------------------------------------------
+   Safe-area helpers
+   ---------------------------------------------------------------------------- */
+.safe-bottom { padding-block-end: max(var(--space-4), env(safe-area-inset-bottom)); }
+.safe-top    { padding-block-start: max(var(--space-4), env(safe-area-inset-top)); }
+.safe-inline {
+  padding-inline-start: max(var(--shell-gutter), env(safe-area-inset-left));
+  padding-inline-end:   max(var(--shell-gutter), env(safe-area-inset-right));
+}
+
+/* Lazy hint for below-the-fold sections — render but defer when off-screen. */
+.cv-auto {
+  content-visibility: auto;
+  contain-intrinsic-size: 60vw 800px;
+}

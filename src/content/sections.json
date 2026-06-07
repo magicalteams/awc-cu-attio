@@ -1,0 +1,1474 @@
+{
+  "relationship-view": [
+    {
+      "id": "what-this-is",
+      "heading": "What this is",
+      "blocks": [
+        {
+          "kind": "p",
+          "text": "One table that puts pipeline, active delivery, completed work, and dead leads side by side. Until now, deals in flight lived in Sales Pipeline and delivered work lived in Engagement History — two separate worlds. The Relationship View collapses both into a single grouped table on the Engagements records page so you can see everything for one firm at once."
+        },
+        {
+          "kind": "p",
+          "text": "The reason it works: every Engagement now carries a single Lifecycle Stage column. Whether something is in Discovery Call, Active delivery, or marked Dead, it sits in the same column and the same table."
+        }
+      ]
+    },
+    {
+      "id": "where-to-find-it",
+      "heading": "Where to find it",
+      "blocks": [
+        {
+          "kind": "p",
+          "text": "Left sidebar → Records → Engagements. Across the top of the page you will see tabs for the existing views. Click the tab labeled \"Relationship View — All Engagements\"."
+        },
+        {
+          "kind": "p",
+          "text": "Rows are grouped by Company and sorted by Due Date, most recent at the top. Columns: Name, Company, Lifecycle Stage, Engagement Type, Coach, Coachee, Manager, Due Date, Fee, and Engagement Summary (AI)."
+        }
+      ]
+    },
+    {
+      "id": "how-to-use-it",
+      "heading": "How to use it day-to-day",
+      "blocks": [
+        {
+          "kind": "steps",
+          "steps": [
+            "Open the view from Records → Engagements → Relationship View — All Engagements.",
+            "Click the Company filter chip at the top and type the firm name (for example, Blue Owl).",
+            "Read top-down: the group header is the company, and every row below is one engagement with them, newest first.",
+            "Scan the Lifecycle Stage column to see what is live, what is closed, and what stalled. Glance at the Engagement Summary (AI) column for a one-line reminder of what each engagement was.",
+            "Click any row to open that engagement if you need the full record.",
+            "Clear the filter chip to go back to the all-companies view."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "try-it",
+      "heading": "Try it",
+      "blocks": [
+        {
+          "kind": "ul",
+          "items": [
+            "Filter by Company \"StepStone\" — you should see the long history of PTC and Executive Coaching engagements stacked together.",
+            "Filter by Company \"Blue Owl\" or \"New Mountain Capital\" before your next prep call and read the rows top to bottom as your one-page relationship brief."
+          ]
+        }
+      ]
+    }
+  ],
+  "lifecycle-stage": [
+    {
+      "id": "what-this-is",
+      "heading": "What this is",
+      "blocks": [
+        {
+          "kind": "p",
+          "text": "Before today, an engagement's status lived in two different places. Pre-signature deals had a Sales Stage on the Sales Pipeline list. Delivered work had a Coaching Status on the Engagement History list. If you wanted one view across both, you couldn't have it. Lifecycle Stage fixes that. It's a single status on every engagement that covers the whole arc, from first conversation through wrap-up. Same column whether the work is a prospect, in onboarding, actively coaching, or finished two years ago."
+        },
+        {
+          "kind": "ul",
+          "items": [
+            "Prospecting — anything pre-signature that's still in play",
+            "Onboarding — SOW signed, kickoff and intake in motion",
+            "Active — coaching is underway",
+            "Completing — final sessions or wrap-up phase",
+            "Completed — delivery is done",
+            "Won — signed but not yet a delivery record (rare, mostly a bridge state)",
+            "Re-Engagement — went quiet, worth nurturing",
+            "Dead — closed lost or unresponsive",
+            "Other — catch-all for edge cases that don't fit the journey above"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "where-to-find-it",
+      "heading": "Where to find it",
+      "blocks": [
+        {
+          "kind": "p",
+          "text": "Open any engagement record. Lifecycle Stage sits in the right-rail attributes panel alongside the other Engagement fields. It's also already wired into the Relationship View as a column, so when you open a company and look at all their engagements, you'll see this status for every one of them in a single column."
+        },
+        {
+          "kind": "p",
+          "text": "To add it to another view: left sidebar → Records → Engagements, open the view, click the columns control, and add Lifecycle Stage."
+        }
+      ]
+    },
+    {
+      "id": "how-to-use-it",
+      "heading": "How to use it day-to-day",
+      "blocks": [
+        {
+          "kind": "steps",
+          "steps": [
+            "Don't edit it by hand. It updates itself when you move a deal through Sales Pipeline or change Coaching Status on Engagement History.",
+            "Use it as a filter or grouping column when you want one list that mixes prospects and live delivery — for example, every Stepstone engagement on one screen.",
+            "On the Relationship View for a company, read down the Lifecycle Stage column to see the full history at a glance: which past engagements completed, which are active right now, and what's currently in the pipeline.",
+            "If you need to slice by a single phase across all engagements (e.g. show me everything in Onboarding), build a Companies or Engagements view filtered on Lifecycle Stage."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "heads-up",
+      "heading": "Heads up",
+      "blocks": [
+        {
+          "kind": "callout",
+          "tone": "info",
+          "text": "When an engagement exists on both lists — pre-signature in Sales Pipeline and also under delivery in Engagement History — the delivery side wins. Lifecycle Stage will reflect the Coaching Status, not the Sales Stage. That's intentional: once work is underway, the delivery record is the source of truth, exactly like Elaine described it for ClickUp."
+        }
+      ]
+    }
+  ],
+  "lifecycle-sync-workflows": [
+    {
+      "id": "what-this-is",
+      "heading": "What this is",
+      "blocks": [
+        {
+          "kind": "p",
+          "text": "Lifecycle Stage on an Engagement is the one indicator that tells you where a piece of work sits overall — still selling, or actively delivering. Two background workflows keep it in sync. When you move a card on the Sales Pipeline or change a Coaching Status on Engagement History, the Lifecycle Stage updates on its own. No one has to remember to touch it."
+        }
+      ]
+    },
+    {
+      "id": "how-it-works",
+      "heading": "How it works day-to-day",
+      "blocks": [
+        {
+          "kind": "ul",
+          "items": [
+            "Elaine moves a Sales Pipeline card from Scoping to Owe a Proposal — Lifecycle Stage updates to reflect that.",
+            "Emily marks an Engagement History record as Active — Lifecycle Stage updates to Active.",
+            "Once an engagement is on Engagement History, Coaching Status is the source of truth. Sales Stage changes on the same engagement stop driving Lifecycle Stage.",
+            "That ordering is intentional: after a deal is won and handed off, the pipeline column is just history. Delivery status is what matters."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "where-to-find-it",
+      "heading": "Where to see the workflows themselves",
+      "blocks": [
+        {
+          "kind": "p",
+          "text": "Left sidebar → Automations → Workflows. You will see two entries — one watching Engagement History, one watching Sales Pipeline. Click either, then the Runs tab to see every time it fired and which Engagement it touched. Useful if a Lifecycle Stage ever looks wrong and you want to confirm the workflow ran."
+        }
+      ]
+    },
+    {
+      "id": "heads-up",
+      "heading": "Heads up",
+      "blocks": [
+        {
+          "kind": "callout",
+          "tone": "info",
+          "text": "If you edit Lifecycle Stage by hand on a record that also lives on Engagement History or Sales Pipeline, the next status change on those lists will overwrite your edit. Change the list status instead — that is what the workflows watch."
+        }
+      ]
+    }
+  ],
+  "sales-pipeline-views": [
+    {
+      "id": "where-to-find-it",
+      "heading": "Where to find it",
+      "blocks": [
+        {
+          "kind": "p",
+          "text": "Left sidebar → Sales Pipeline (nested under Engagements). The view switcher sits at the top of the page — click it to jump between the five saved views."
+        }
+      ]
+    },
+    {
+      "id": "how-to-use-it",
+      "heading": "How to use it",
+      "blocks": [
+        {
+          "kind": "p",
+          "text": "Each view answers a different question. Pick the one that matches what you're doing."
+        },
+        {
+          "kind": "ul",
+          "items": [
+            "Pipeline Table — the full list with columns for Company, Sales Stage, Fee, Likelihood, Engagement Type, and Due Date. Use this when you want to scan or sort everything.",
+            "Pipeline Board — kanban grouped by Sales Stage. Drag a card from one column to the next to move a deal forward. Good for Monday-morning review.",
+            "Active Pipeline — the same board with Declined, Dead, and Re-Engagement hidden. This is Michelle's daily default.",
+            "Needs Nurturing — only Re-Engagement deals. Open this when you have time to revive cold leads.",
+            "Won This Year — every deal that closed this calendar year. Useful for end-of-quarter recaps and pulling references."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "heads-up",
+      "heading": "Heads up",
+      "blocks": [
+        {
+          "kind": "callout",
+          "tone": "warn",
+          "text": "These views are shared across the workspace. If you rename a view, change its filters, or reorder columns, everyone sees the change. To experiment without affecting the team, duplicate the view first (three-dot menu on the view tab → Duplicate) and edit the copy."
+        }
+      ]
+    },
+    {
+      "id": "faq",
+      "heading": "FAQ",
+      "blocks": [
+        {
+          "kind": "p",
+          "text": "Q: A deal disappeared from Active Pipeline — where did it go?"
+        },
+        {
+          "kind": "p",
+          "text": "A: Its Sales Stage likely moved to Declined, Dead, or Re-Engagement. Switch to the Pipeline Table view and search by company name to find it, then update the stage if it was a mistake."
+        },
+        {
+          "kind": "p",
+          "text": "Q: Can I add a column to the table view just for me?"
+        },
+        {
+          "kind": "p",
+          "text": "A: Not without it appearing for everyone. Duplicate the view first, then add your column on the copy."
+        }
+      ]
+    }
+  ],
+  "sow-onboarding-rename": [
+    {
+      "id": "what-this-is",
+      "heading": "What this is",
+      "blocks": [
+        {
+          "kind": "p",
+          "text": "Stage 6 on the Sales Pipeline used to be called Send SOW. It is now SOW Onboarding. The new name covers everything that happens around the SOW itself: drafting it, sending it, the SOW coming back signed, and the early kickoff work like scheduling the first call, assigning a coach, and running intake. It matches the language the team already uses in ClickUp, so nothing to relearn."
+        }
+      ]
+    },
+    {
+      "id": "how-to-use-it",
+      "heading": "How to use it",
+      "blocks": [
+        {
+          "kind": "steps",
+          "steps": [
+            "Open the Sales Pipeline from the left sidebar under Lists.",
+            "Move an engagement into SOW Onboarding the moment the SOW starts being drafted, not when it goes out the door.",
+            "Once Emily sees an engagement land in this column, that is her cue to set up the coaching delivery list and start the kickoff scheduling.",
+            "When the SOW is sent and you are waiting on signature, move it to Waiting for Signed SOW.",
+            "When it comes back signed and the engagement is fully kicked off, move it to Won."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "faq",
+      "heading": "FAQ",
+      "blocks": [
+        {
+          "kind": "p",
+          "text": "Do I need to re-tag any old deals? No. Every engagement that was in Send SOW is now in SOW Onboarding automatically. Same column, new label."
+        },
+        {
+          "kind": "p",
+          "text": "Should I use SOW Onboarding for the actual onboarding sessions with the coachee? No. Those are tracked in the Engagement History list once the deal is Won. SOW Onboarding is still the pre-signature stage, just stretched to cover the prep work Emily does in parallel."
+        }
+      ]
+    }
+  ],
+  "awaiting-response-from": [
+    {
+      "id": "what-this-is",
+      "heading": "What this is",
+      "blocks": [
+        {
+          "kind": "p",
+          "text": "A small field on every Sales Pipeline card that tells you who owes the next move. Three values: Us, Client, or Stalled. It is the closest thing Attio has to the at-a-glance ownership signal you were using in ClickUp. Sales Stage tells you where a deal sits in the funnel. Awaiting Response From tells you whose turn it is."
+        }
+      ]
+    },
+    {
+      "id": "where-to-find-it",
+      "heading": "Where to find it",
+      "blocks": [
+        {
+          "kind": "p",
+          "text": "Left sidebar → Lists → Sales Pipeline. On the Table view it shows as a column right next to Sales Stage. On the Board (Kanban) view it shows as a small chip on each card, so you can scan a column and see at a glance which deals are sitting on your side."
+        }
+      ]
+    },
+    {
+      "id": "how-to-use-it",
+      "heading": "How to use it",
+      "blocks": [
+        {
+          "kind": "ul",
+          "items": [
+            "When you send something to the client (proposal, follow-up email, scoping questions), set it to Client.",
+            "When the client replies and the next move is yours, flip it back to Us.",
+            "If a deal has gone quiet for a few weeks with no clear next step, set it to Stalled so it stops cluttering your active list.",
+            "Filter the Pipeline view to Awaiting Response From = Us to get your daily worklist — these are the deals where you owe somebody something.",
+            "Filter to Stalled once a month to decide what to nudge, re-engage, or mark Dead."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "heads-up",
+      "heading": "Heads up",
+      "blocks": [
+        {
+          "kind": "callout",
+          "tone": "warn",
+          "text": "This is manual. Attio is not watching your inbox and flipping the value when a client replies. If you forget to update it, the field will be wrong. The habit that works best: update it in the same moment you send or receive the email, before you close the tab."
+        }
+      ]
+    }
+  ],
+  "pipeline-to-history-workflow": [
+    {
+      "id": "what-this-is",
+      "heading": "What this is",
+      "blocks": [
+        {
+          "kind": "p",
+          "text": "When you move a deal to Won in the Sales Pipeline, Attio adds the same engagement to the Engagement History list and sets its Coaching Status to Onboarding. You do not file it twice. The same record now lives on both lists, which is how Elaine keeps it on her pipeline view while Emily picks it up for delivery."
+        }
+      ]
+    },
+    {
+      "id": "how-to-use-it",
+      "heading": "How to use it",
+      "blocks": [
+        {
+          "kind": "steps",
+          "steps": [
+            "Elaine drags the deal card to the Won column on the Sales Pipeline board (or changes Sales Stage to Won on the record).",
+            "Within a few seconds, Attio adds the engagement to Engagement History with Coaching Status = Onboarding and flips the Lifecycle Stage indicator to Onboarding.",
+            "Emily opens left sidebar → Lists → Engagement History, switches to the kanban board, and looks at the Onboarding column.",
+            "Emily opens the new card and fills in delivery details: assigned coach, kickoff date, intake notes, and anything else the engagement needs.",
+            "When intake is done, Emily moves the card from Onboarding to Active on the same board."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "faq",
+      "heading": "FAQ",
+      "blocks": [
+        {
+          "kind": "p",
+          "text": "Does this create a duplicate engagement?"
+        },
+        {
+          "kind": "p",
+          "text": "No. It is one engagement record with two list memberships. Edits made from the Engagement History view are the same edits you would see from the Sales Pipeline view — they are the same record."
+        },
+        {
+          "kind": "p",
+          "text": "What if a deal was marked Won by mistake?"
+        },
+        {
+          "kind": "p",
+          "text": "Change the Sales Stage back. The engagement will stay on Engagement History until you remove it manually — open the record, find Engagement History in the Lists block on the right rail, and remove the entry."
+        }
+      ]
+    },
+    {
+      "id": "heads-up",
+      "heading": "Heads up",
+      "blocks": [
+        {
+          "kind": "callout",
+          "tone": "info",
+          "text": "The workflow lives at Automations → Workflows → \"Sales Pipeline → Engagement History on Won.\" If it ever stops firing, that is the first place to check. Do not disable it without telling Magical Teams — Emily's handoff depends on it."
+        }
+      ]
+    }
+  ],
+  "jotform-zapier-intake": [
+    {
+      "id": "what-this-is",
+      "heading": "What this is",
+      "blocks": [
+        {
+          "kind": "p",
+          "text": "A new PTC intake form built in JotForm that writes directly into Attio. When a sponsor submits it, Attio gets the Company, the Coachee, the Manager, the EA, and the HR Sponsor as Person records, plus a new Engagement linked to all of them. The Engagement lands in the Sales Pipeline at the SOW Onboarding stage and Elaine gets an email."
+        },
+        {
+          "kind": "p",
+          "text": "It replaces the ClickUp intake form. The fields are the same ones you use today: Company, Coachee title and email, leave dates, leave type, Manager details, EA email, HR Sponsor contacts, and any special circumstances."
+        }
+      ]
+    },
+    {
+      "id": "how-to-use",
+      "heading": "How to use it day-to-day",
+      "blocks": [
+        {
+          "kind": "ul",
+          "items": [
+            "Send sponsors the new JotForm link instead of the ClickUp one.",
+            "When a submission comes in, Elaine gets a notification email with the coachee and company name.",
+            "Open Attio, left sidebar, Lists, Sales Pipeline. The new Engagement is in the SOW Onboarding column.",
+            "Click into the Engagement to confirm the Coachee, Manager, EA, and Sponsor records linked correctly.",
+            "Emily picks it up from there the same way she does today: coach assignment, kickoff scheduling, intake."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "heads-up",
+      "heading": "Heads up",
+      "blocks": [
+        {
+          "kind": "callout",
+          "tone": "warn",
+          "text": "For two weeks after launch, both the old ClickUp form and the new JotForm will accept submissions. This is on purpose so we can compare results and prove the new path is reliable before cutover. During that window, glance at both ClickUp and the Sales Pipeline to make sure nothing gets missed. Once we cut over, the old ClickUp link will redirect to the new form."
+        }
+      ]
+    },
+    {
+      "id": "faq",
+      "heading": "FAQ",
+      "blocks": [
+        {
+          "kind": "p",
+          "text": "What if a submission doesn't show up in Attio?"
+        },
+        {
+          "kind": "p",
+          "text": "There's a short troubleshooting guide that walks through checking JotForm's submission log and Zapier's task history, then manually entering the Engagement if needed. Ping Magical Teams and we'll run through it with whoever is on point."
+        },
+        {
+          "kind": "p",
+          "text": "Whose Zapier account is this on?"
+        },
+        {
+          "kind": "p",
+          "text": "Michelle's. It's one of five zaps in her account, and Magical Teams has the login for build and maintenance."
+        }
+      ]
+    }
+  ],
+  "ptc-backfill": [
+    {
+      "id": "what-this-is",
+      "heading": "What this is",
+      "blocks": [
+        {
+          "kind": "p",
+          "text": "Four PTC engagements that lived only in ClickUp are now in Attio. Sarah Gonzales, Abby Kreitler, Lara Marcus, and Lindsey Moore each have a full engagement record with their coachee, manager, EA, and sponsor links in place. Two of them already had partial records in Attio; those were filled in rather than re-created, so there are no duplicates."
+        }
+      ]
+    },
+    {
+      "id": "where-to-find-it",
+      "heading": "Where to find them",
+      "blocks": [
+        {
+          "kind": "p",
+          "text": "Left sidebar, then Lists, then Sales Pipeline or Engagement History depending on where each one belongs. You can also open the Companies record for the sponsor firm and look at the right-rail Engagements block to see them in context."
+        }
+      ]
+    },
+    {
+      "id": "how-to-use",
+      "heading": "How to use it day-to-day",
+      "blocks": [
+        {
+          "kind": "p",
+          "text": "When a new PTC engagement starts and the client used the JotForm, it flows in automatically. When one starts another way (a referral email, a phone call, a ClickUp task someone built before remembering to use the form), tell Magical Teams and the same catch-up pass can be run. The steps:"
+        },
+        {
+          "kind": "steps",
+          "steps": [
+            "Open the new engagement in Attio and check the right-rail Highlights block. Coachee, manager, EA, and sponsor should all be linked, not just typed as text.",
+            "If a person is showing as plain text instead of a linked record, click into the field and pick the existing Person record (or create one if they're genuinely new).",
+            "Confirm the sponsor's company on the engagement matches the Companies record you'd expect. If the sponsor works at a PE firm Attio already knows about, it should link to that company automatically.",
+            "Add a Note on the engagement for anything in the original ClickUp task that isn't captured in a structured field — context Michelle or the coach will want later."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "heads-up",
+      "heading": "Heads up",
+      "blocks": [
+        {
+          "kind": "callout",
+          "tone": "info",
+          "text": "JotForm is the cleanest path for new PTC intake — it lands in Attio with everything linked the first time. This catch-up pattern is the backup for engagements that came in some other way. If you find yourself doing it often, that's a signal the form link needs to be more prominent on the client's side."
+        }
+      ]
+    }
+  ],
+  "high-value-taxonomy": [
+    {
+      "id": "what-this-is",
+      "heading": "What this is",
+      "blocks": [
+        {
+          "kind": "p",
+          "text": "Two flags, one for firms and one for people. On a Company, the High Value Company checkbox marks a firm worth staying close to — even if they aren't currently active. On a Person, the High-Value role tag marks an individual the team wants to keep on the radar regardless of their other roles. A Past Client company can still be High Value. A coachee can be High-Value and still keep their Coachee role."
+        }
+      ]
+    },
+    {
+      "id": "how-to-use-it",
+      "heading": "How to use it",
+      "blocks": [
+        {
+          "kind": "steps",
+          "steps": [
+            "Open the Company or Person record from the left sidebar — Records → Companies or Records → People.",
+            "For a firm: in the right-rail attributes, tick the High Value Company checkbox.",
+            "For a person: in the Role Type field, add High-Value alongside whatever role they already have. Don't remove Sponsor/HR Contact or Coachee.",
+            "Untick or remove the tag the same way when a relationship cools off — these flags are meant to be edited as things change.",
+            "To see everyone flagged, use the two saved views described in the High Value views section."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "faq",
+      "heading": "FAQ",
+      "blocks": [
+        {
+          "kind": "p",
+          "text": "Should I flag the company or the person?"
+        },
+        {
+          "kind": "p",
+          "text": "Both, if both matter. Flag the company when the firm itself is a priority — a PE shop you want more PTC work from. Flag the person when an individual matters regardless of where they work — a sponsor who keeps moving firms and bringing you with them."
+        },
+        {
+          "kind": "p",
+          "text": "What happened to the old High Value Client checkbox and High Value Coachee role?"
+        },
+        {
+          "kind": "p",
+          "text": "Both were archived. Only two records used them, and they were migrated over to the new setup. Four overlapping flags is too many to keep straight — two is enough."
+        }
+      ]
+    },
+    {
+      "id": "heads-up",
+      "heading": "Heads up",
+      "blocks": [
+        {
+          "kind": "callout",
+          "tone": "info",
+          "text": "High Value Company is separate from Client Status. A firm can be a Past Client and still be High Value — that's the whole point of the flag, to mark companies worth re-engaging. Don't use Client Status as a substitute."
+        }
+      ]
+    }
+  ],
+  "high-value-views": [
+    {
+      "id": "where-to-find",
+      "heading": "Where to find them",
+      "blocks": [
+        {
+          "kind": "ul",
+          "items": [
+            "High Value Companies: left sidebar → Records → Companies, then the tab called 'High Value Companies'.",
+            "High Value Contacts: left sidebar → Records → People, then the tab called 'High Value Contacts — Follow Up'."
+          ]
+        },
+        {
+          "kind": "p",
+          "text": "Both views are shared across the workspace, so Michelle, Elaine, Emily, and Jill all see the same list."
+        }
+      ]
+    },
+    {
+      "id": "how-to-use",
+      "heading": "How to use them",
+      "blocks": [
+        {
+          "kind": "p",
+          "text": "The Companies view sorts by Last Interaction, oldest first. The company you have not touched in the longest time sits at the top."
+        },
+        {
+          "kind": "steps",
+          "steps": [
+            "Open High Value Companies once a week. Work top-down — the rows at the top are the ones most overdue for a check-in.",
+            "Click into a company to see open engagements, recent emails, and notes on the right rail before you reach out.",
+            "Open High Value Contacts when you want to think about people rather than companies. It groups by role, so all the Sponsors sit together, all the Coachees sit together, and so on.",
+            "Use the Sponsor group for relationship-warming outreach. Use the Coachee group when you are thinking about referrals or testimonials."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "faq",
+      "heading": "FAQ",
+      "blocks": [
+        {
+          "kind": "p",
+          "text": "Why does the Companies view look like it is in the wrong order? It is sorted oldest-interaction-first on purpose. The point is to surface accounts you have gone quiet on, not the ones already top of mind."
+        },
+        {
+          "kind": "p",
+          "text": "How does a company or person end up in these views? Someone on the team ticks the High Value checkbox on a Company, or adds the High-Value role to a Person. Nothing automatic — it is a deliberate flag."
+        }
+      ]
+    }
+  ],
+  "highlights-row": [
+    {
+      "id": "what-this-is",
+      "heading": "What this is",
+      "blocks": [
+        {
+          "kind": "p",
+          "text": "The top of every Company record shows a row of cards called Highlights. Two of those cards are filtered people lists: one for HR Contacts at that company, one for Billing Contacts. The High Value Company checkbox sits in the same row as a one-click toggle. The point is that when you open a company, the people you actually need to email or invoice are right there, without scrolling or clicking into a sidebar."
+        }
+      ]
+    },
+    {
+      "id": "how-to-use-it",
+      "heading": "How to use it day-to-day",
+      "blocks": [
+        {
+          "kind": "steps",
+          "steps": [
+            "Open any Company record from the left sidebar (Records, then Companies).",
+            "Look at the top row under the company name. HR Contacts and Billing Contacts each show as their own card.",
+            "Click a person card to jump straight to that person's record.",
+            "Toggle High Value Company in the same row when a relationship warrants it. That flag is what drives the High Value filters on company views.",
+            "To change which cards appear or their order, click the three dots in the top right of the Company header, choose Configure page, and edit the Highlights row. Saving updates the layout for everyone in the workspace."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "heads-up",
+      "heading": "Heads up",
+      "blocks": [
+        {
+          "kind": "callout",
+          "tone": "warn",
+          "text": "The filtered-people cards are still getting one more pass to render cleanly. If they look awkward when you open a company, the fallback is to move HR Contacts and Billing Contacts into the right sidebar as filtered blocks instead. Same information, slightly less prominent. Magical Teams will confirm which version you are seeing once it settles."
+        }
+      ]
+    },
+    {
+      "id": "try-it",
+      "heading": "Try it",
+      "blocks": [
+        {
+          "kind": "ul",
+          "items": [
+            "Open Stepstone Group from Companies and see whether the HR Contacts card surfaces the right people without you having to search.",
+            "Pick a current active client and toggle High Value Company on. Then open the Active Clients view and confirm the high-value filter behaves the way you expect."
+          ]
+        }
+      ]
+    }
+  ],
+  "pricing-recommendation-prompt": [
+    {
+      "id": "where-to-find",
+      "heading": "Where to find it",
+      "blocks": [
+        {
+          "kind": "p",
+          "text": "Open Ask Attio from the top of any page, then click into Stored Prompts. It's saved as 'Pricing Recommendation'. You can run it from there, or just type the prompt name into Ask Attio and it will pull it up."
+        }
+      ]
+    },
+    {
+      "id": "how-to-use",
+      "heading": "How to use it",
+      "blocks": [
+        {
+          "kind": "p",
+          "text": "Give it a short description of the engagement. The more specifics you include, the better the answer."
+        },
+        {
+          "kind": "ul",
+          "items": [
+            "Service line: PTC, Executive Coaching, Group Program, Speaking, or Consulting",
+            "Duration: number of months or sessions",
+            "Coachee's role: MD, VP, Partner, Associate, etc.",
+            "Any discount reason: returning client, multi-coachee package, nonprofit, etc."
+          ]
+        },
+        {
+          "kind": "p",
+          "text": "It reads the four Pricing Guides on the Templates object and returns a recommended number with a short explanation of how it got there. Treat it as a starting point for the proposal, not a final quote."
+        }
+      ]
+    },
+    {
+      "id": "try-it",
+      "heading": "Try it",
+      "blocks": [
+        {
+          "kind": "ul",
+          "items": [
+            "Ask: '6-month executive coaching engagement for an MD' — you should get around $32,000.",
+            "Ask: 'PTC engagement for a VP, returning client, second coachee this year' — it should apply the standard PTC rate and flag the returning-client discount."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "heads-up",
+      "heading": "Heads up",
+      "blocks": [
+        {
+          "kind": "callout",
+          "tone": "info",
+          "text": "When pricing changes, update the Pricing Guide notes on the Templates object. The prompt reads those notes live, so the next answer reflects the new numbers — no need to touch the prompt itself."
+        }
+      ]
+    }
+  ],
+  "pricing-guides-template": [
+    {
+      "id": "what-this-is",
+      "heading": "What this is",
+      "blocks": [
+        {
+          "kind": "p",
+          "text": "Michelle's pricing guide lives in a Google Sheet with four tabs: Executive Coaching, PTC, Group Programs, and Consulting. Each tab is now loaded into Attio as a separate note on a single Template record called Pricing Guides. The tiers, conditions, and calculator logic are all there in readable form. When you ask Attio for a price recommendation, this is what it reads."
+        }
+      ]
+    },
+    {
+      "id": "where-to-find",
+      "heading": "Where to find it",
+      "blocks": [
+        {
+          "kind": "p",
+          "text": "Left sidebar -> Records -> Templates -> open the record called Pricing Guides. The right rail shows four notes, one per service line. Click any of them to read the full guide."
+        }
+      ]
+    },
+    {
+      "id": "how-to-use",
+      "heading": "How to use it day-to-day",
+      "blocks": [
+        {
+          "kind": "ul",
+          "items": [
+            "When scoping a new engagement, ask Attio something like \"what should we charge for a 9-month EC engagement for a senior leader at a PE firm\" and it will pull from these notes.",
+            "If you want to read the source directly, open the Pricing Guides record and click into the relevant note.",
+            "Search works across the notes. Use the top search bar with a term like \"cohort minimum\" or \"PTC extension\" to jump to the right section.",
+            "Treat the Google Sheet as the master copy. Edit pricing there when it changes."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "updating",
+      "heading": "Keeping it current",
+      "blocks": [
+        {
+          "kind": "callout",
+          "tone": "info",
+          "text": "When Michelle updates the Google Sheet, the Attio notes don't auto-refresh. Ping Magical Teams and we'll re-import the four notes. It takes about ten minutes. Until that happens, Ask Attio will quote the older numbers, so flag the change when you ask."
+        }
+      ]
+    }
+  ],
+  "stored-prompts-library": [
+    {
+      "id": "what-this-is",
+      "heading": "What this is",
+      "blocks": [
+        {
+          "kind": "p",
+          "text": "Stored Prompts are saved questions you can run against Ask Attio in one click. Instead of retyping the same prompt every time you want a pricing recommendation or a meeting prep brief, you open the library, pick the one you want, and run it. Anything saved here is shared across the workspace, so when Michelle adds a new prompt, Elaine, Emily and Jill can use it too."
+        }
+      ]
+    },
+    {
+      "id": "where-to-find-it",
+      "heading": "Where to find it",
+      "blocks": [
+        {
+          "kind": "p",
+          "text": "Open Ask Attio from the left sidebar. In the Ask Attio panel, click Prompts. That is the full library."
+        }
+      ]
+    },
+    {
+      "id": "how-to-use-it",
+      "heading": "How to use it",
+      "blocks": [
+        {
+          "kind": "steps",
+          "steps": [
+            "Open Ask Attio and click Prompts in its sidebar.",
+            "Pick a prompt from the list (for example, pricing recommendation or prep for next meeting).",
+            "Run it as-is, or edit the text first if you want to tweak the question for this specific situation.",
+            "If you find yourself editing the same prompt the same way repeatedly, save it as a new prompt so the whole team gets it.",
+            "To adjust a prompt permanently, open it, change the wording, and save. The next person who runs it gets the new version."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "heads-up",
+      "heading": "Heads up",
+      "blocks": [
+        {
+          "kind": "callout",
+          "tone": "warn",
+          "text": "The Coach Capacity prompt is slower than the others right now because it walks through a lot of records to answer. It is being rewritten to be faster. If it hangs, cancel and try again later, or ask Magical Teams."
+        }
+      ]
+    }
+  ],
+  "engagement-summary": [
+    {
+      "id": "what-this-is",
+      "heading": "What this is",
+      "blocks": [
+        {
+          "kind": "p",
+          "text": "A short paragraph on every Engagement that tells you where things stand: what's happened recently, who owes the next move, and anything that's stuck. Attio writes it by reading the engagement's linked sponsors, recent emails, notes, and meeting context. You can refresh it whenever you want a fresh read."
+        }
+      ]
+    },
+    {
+      "id": "how-to-use-it",
+      "heading": "How to use it",
+      "blocks": [
+        {
+          "kind": "steps",
+          "steps": [
+            "Open the Active Pipeline view (left sidebar → Lists → Sales Pipeline → Active Pipeline).",
+            "Find the Engagement Summary column. Each cell shows the current AI-written paragraph.",
+            "To refresh one engagement, click the cell and pick the AI Autofill option.",
+            "To refresh the whole view, click the sparkle icon in the column header and choose AI Autofill for all records in view.",
+            "Read the credit estimate Attio shows before confirming. A full-view run on a long pipeline can use a meaningful chunk of credits.",
+            "Skim the summaries before a pipeline review with Elaine — they're written to be the one paragraph that catches you up."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "heads-up",
+      "heading": "Heads up",
+      "blocks": [
+        {
+          "kind": "callout",
+          "tone": "warn",
+          "text": "The summary is only as good as the data underneath it. If sponsors, manager, or recent email context are missing, the paragraph will feel thin or generic. Best practice: do a quick cleanup pass on the engagement (correct sponsors linked, coachee linked, stage current) and then refresh the summary."
+        },
+        {
+          "kind": "p",
+          "text": "It also costs AI credits per record. Refreshing one engagement is cheap. Refreshing 200 at once is not — always check the estimate Attio shows you before confirming."
+        }
+      ]
+    },
+    {
+      "id": "faq",
+      "heading": "FAQ",
+      "blocks": [
+        {
+          "kind": "p",
+          "text": "Does it update automatically when a new email comes in?"
+        },
+        {
+          "kind": "p",
+          "text": "No. The summary is a snapshot from the last time you ran it. Re-run it when you want the current picture — typically before a pipeline review or before reaching out to a sponsor you haven't spoken to in a while."
+        },
+        {
+          "kind": "p",
+          "text": "Can I edit the paragraph by hand?"
+        },
+        {
+          "kind": "p",
+          "text": "You can, but the next AI refresh will overwrite it. If you want a note that sticks, add it as a regular Note on the engagement instead."
+        }
+      ]
+    }
+  ],
+  "ask-attio-relationships": [
+    {
+      "id": "what-this-is",
+      "heading": "What this is",
+      "blocks": [
+        {
+          "kind": "p",
+          "text": "Ask Attio is the workspace-wide question box. Type a question in plain English about a company, a person, or a slice of your work, and it pulls together everything it knows. That includes every engagement record, every note, your synced Gmail and Calendar, and the pricing template. The answer comes back as a short written summary, not a list of links to dig through."
+        }
+      ]
+    },
+    {
+      "id": "where-to-find-it",
+      "heading": "Where to find it",
+      "blocks": [
+        {
+          "kind": "p",
+          "text": "Press Cmd-K on a Mac or Ctrl-K on Windows from anywhere in Attio. The Ask Attio box opens in the middle of the screen. You can also click the magnifying glass in the top bar."
+        }
+      ]
+    },
+    {
+      "id": "how-to-use-it",
+      "heading": "How to use it day-to-day",
+      "blocks": [
+        {
+          "kind": "steps",
+          "steps": [
+            "Before a discovery call, ask \"Summarize our relationship with [Company]\" to get a one-paragraph briefing on past engagements, recent emails, and who you've worked with there.",
+            "Mid-call, if a contact mentions a name you don't recognize, ask \"Who is [Name] and what's their role?\" to pull their record and connections.",
+            "Heading into a proposal, ask \"What engagement types have we done with [Company]?\" so you know what's familiar to them and what would be new.",
+            "When pitching a new sector, ask \"What success stories do we have for [industry]?\" to surface testimonials and relevant past wins.",
+            "For planning, ask date-bounded questions like \"What PTC engagements did we do in 2025?\" — it can count and group across the whole history."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "heads-up",
+      "heading": "Heads up",
+      "blocks": [
+        {
+          "kind": "callout",
+          "tone": "info",
+          "text": "Ask Attio only knows what's in the workspace. If a team member hasn't connected their Gmail yet, their email threads with a contact won't be in the answer. Same for documents — testimonials and pricing only show up once they've been loaded in. If an answer feels thin, the gap is usually upstream data, not the question."
+        }
+      ]
+    }
+  ],
+  "historical-migration": [
+    {
+      "id": "what-this-is",
+      "heading": "What this is",
+      "blocks": [
+        {
+          "kind": "p",
+          "text": "Every engagement worth keeping from ClickUp now lives in Attio as a record you can search, filter, and link to a Company and the people involved. That's roughly a thousand engagements: about 350-450 sitting on the Sales Pipeline and about 655 on Engagement History. The Won deals from Biz Dev were intentionally left out because each one already has a matching delivery task in Corporate Coaching, Speaking, or Consulting. Migrating both would have given you two records for the same engagement, with the Biz Dev copy frozen at the moment of signature."
+        }
+      ]
+    },
+    {
+      "id": "where-to-find-it",
+      "heading": "Where to find it",
+      "blocks": [
+        {
+          "kind": "ul",
+          "items": [
+            "Left sidebar → Lists → Sales Pipeline for everything pre-signature.",
+            "Left sidebar → Lists → Engagement History for everything in delivery or already delivered.",
+            "Left sidebar → Records → Companies, open a company, and the right-rail Engagements block shows every engagement linked to that company across both lists."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "how-to-use-it",
+      "heading": "How to use it",
+      "blocks": [
+        {
+          "kind": "steps",
+          "steps": [
+            "Open a Company you've worked with before. The right rail lists every engagement, old and new.",
+            "Click any engagement to see the coachee, coach, sponsors, fee, and dates that came over from ClickUp.",
+            "Use the source list field on each engagement to tell whether it came from Biz Dev, Corporate Coaching, Speaking, or Consulting.",
+            "If you need to cross-reference back to ClickUp, every engagement carries its original ClickUp task ID as a field — paste it into ClickUp's search to land on the original task."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "faq",
+      "heading": "FAQ",
+      "blocks": [
+        {
+          "kind": "p",
+          "text": "Why do some clients have two engagements that look like the same deal? When a Biz Dev lead became real work, ClickUp kept the Biz Dev task and added a separate delivery task in Corporate Coaching. Both came across, on purpose. The Biz Dev record holds the sales history (proposal date, fee at signature). The delivery record holds what actually happened (coach, status, outcomes). They're tagged with different source lists so you can tell them apart at a glance."
+        },
+        {
+          "kind": "p",
+          "text": "What didn't come over? ClickUp comments, file attachments, and Won Biz Dev deals. Comments and attachments are a separate piece of work. Won Biz Dev was skipped on purpose — see above."
+        }
+      ]
+    }
+  ],
+  "sponsor-backfill": [
+    {
+      "id": "what-this-is",
+      "heading": "What this is",
+      "blocks": [
+        {
+          "kind": "p",
+          "text": "In ClickUp, a sponsor field could only hold one value, so when two people shared a sponsor role on the same engagement, they got jammed into one record like \"Crystal Stokey, Riley Barrantes\". Titles sometimes got mixed into the name field too. We split every compound record into individual People, moved titles to their proper place, and reconnected each sponsor to their company. 263+ sponsors were cleaned up across the historical data."
+        }
+      ]
+    },
+    {
+      "id": "how-to-use",
+      "heading": "How to use it",
+      "blocks": [
+        {
+          "kind": "ul",
+          "items": [
+            "On an Engagement, the Sponsors field now holds multiple individuals. Click into a sponsor to open their Person record.",
+            "Each sponsor's job title sits on their Person record under Title, not buried in the engagement notes.",
+            "Each sponsor is linked to their Company, so when you open the company, you see them in the People block on the right rail.",
+            "When adding a new sponsor to an engagement, search for them by name. If they already exist (from email sync or a past engagement), pick the existing record rather than creating a duplicate.",
+            "If you ever see a comma-separated name slip through on a new record, split it into two People and re-link them to the engagement's Sponsors field."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "faq",
+      "heading": "FAQ",
+      "blocks": [
+        {
+          "kind": "p",
+          "text": "Where do I see all the sponsors at a company? Open the company (left sidebar → Records → Companies → pick the company), and the right-rail People block lists everyone linked to it, including sponsors. To filter to sponsors only, go to Records → People and filter Role Type contains Sponsor/HR Contact."
+        },
+        {
+          "kind": "p",
+          "text": "What if Gmail sync already created a Person for the same sponsor under a different email? Merge them. Open the duplicate, click the three-dot menu, and choose Merge. Attio will combine the email history, engagement links, and notes onto one record."
+        }
+      ]
+    }
+  ],
+  "manager-ea-backfill": [
+    {
+      "id": "what-this-is",
+      "heading": "What this is",
+      "blocks": [
+        {
+          "kind": "p",
+          "text": "When you coach someone, their manager and their assistant matter. The manager is usually the sponsor or approver. The EA is who you actually email to get time on the calendar. Both are now linked as real Person records on the engagement, not just typed into a notes field."
+        }
+      ]
+    },
+    {
+      "id": "how-to-use-it",
+      "heading": "How to use it day-to-day",
+      "blocks": [
+        {
+          "kind": "ul",
+          "items": [
+            "Open an Engagement record. The Manager field shows a linked Person — click through to see their email, title, and other engagements.",
+            "On the coachee's Person record, the Manager field is filled in too, so you can see the reporting line from either direction.",
+            "To find an EA, open the manager's Person record. If their EA is known, it shows in the Executive Assistant field.",
+            "To find everyone tagged as an EA, go left sidebar → Records → People, then filter Role Type contains Executive Assistant.",
+            "Coachee titles are now on the Person record itself, not buried in engagement text. Sort or group by Job Title to see seniority across a book of work."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "try-it",
+      "heading": "Try it",
+      "blocks": [
+        {
+          "kind": "ul",
+          "items": [
+            "Pull up a recent PTC engagement and confirm the Manager field links to a real Person. Click through and see if their EA is captured.",
+            "From left sidebar → Records → People, filter Role Type contains Executive Assistant. That's your scheduling rolodex."
+          ]
+        }
+      ]
+    }
+  ],
+  "previous-companies": [
+    {
+      "id": "what-this-is",
+      "heading": "What this is",
+      "blocks": [
+        {
+          "kind": "p",
+          "text": "Previous Companies is a field on every Person record that holds an employment history. It points to actual Company records in Attio, not free text. When Bhavna Katkar moves from Veritas to Patient Square, you change her primary company to Patient Square and add Veritas to Previous Companies. The relationship history stays intact, and Veritas's record still shows her when you look at past contacts."
+        }
+      ]
+    },
+    {
+      "id": "where-to-find-it",
+      "heading": "Where to find it",
+      "blocks": [
+        {
+          "kind": "p",
+          "text": "Left sidebar, then Records, then People. Open any person. Previous Companies sits in the right rail alongside their primary Company. If you do not see it, scroll the right rail or check that the section is expanded."
+        }
+      ]
+    },
+    {
+      "id": "how-to-use-it",
+      "heading": "How to use it",
+      "blocks": [
+        {
+          "kind": "steps",
+          "steps": [
+            "When you hear a contact has changed jobs, open their Person record from the left sidebar.",
+            "In the right rail, find the existing Company link. Note which company it currently points to.",
+            "Click Previous Companies and add that old company to the list.",
+            "Then update the primary Company field to the new firm. Search by name. If the new firm does not exist yet, create it.",
+            "Save. The old engagement history stays attached to the old Company, and new work will land on the new one."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "faq",
+      "heading": "FAQ",
+      "blocks": [
+        {
+          "kind": "p",
+          "text": "Will I lose the engagement history at the old firm?"
+        },
+        {
+          "kind": "p",
+          "text": "No. Engagements are linked to whichever Company was set when the engagement was created. Moving someone to a new firm does not rewrite history. Veritas still shows the PTC work you did with Bhavna while she was there."
+        },
+        {
+          "kind": "p",
+          "text": "What if someone has worked at three or four firms?"
+        },
+        {
+          "kind": "p",
+          "text": "Add all of them. The field accepts a list, so a full career arc is fine."
+        }
+      ]
+    }
+  ],
+  "completed-archive-view": [
+    {
+      "id": "where-to-find-it",
+      "heading": "Where to find it",
+      "blocks": [
+        {
+          "kind": "p",
+          "text": "Left sidebar -> Engagement History -> the Completed Archive tab at the top of the view list. It's filtered to Coaching Status = Completed and sorted by Due Date, newest first."
+        }
+      ]
+    },
+    {
+      "id": "how-to-use-it",
+      "heading": "How to use it",
+      "blocks": [
+        {
+          "kind": "p",
+          "text": "The Company column is now in the table. Two ways to use it:"
+        },
+        {
+          "kind": "ul",
+          "items": [
+            "Scan by firm. Resize or drag the Company column near the left so you can eyeball who an engagement was for without opening the record.",
+            "Filter by firm. Click the Company column header, choose Filter, and pick the firm you're looking for. You'll see every completed engagement we've done with them in date order.",
+            "Group by firm. From the view toolbar, set Group by -> Company to get one collapsible section per firm. Useful when prepping for a renewal conversation."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "try-it",
+      "heading": "Try it",
+      "blocks": [
+        {
+          "kind": "p",
+          "text": "Filter Company = StepStone Group. You should see every past PTC and Executive Coaching engagement we've delivered there, most recent at the top. Good sanity check before any Stepstone follow-up call."
+        }
+      ]
+    }
+  ],
+  "awc-call-recorder": [
+    {
+      "id": "what-this-is",
+      "heading": "What this is",
+      "blocks": [
+        {
+          "kind": "p",
+          "text": "Attio's meeting recorder can join your calls, capture audio, and produce a transcript afterward. By default it shows up in the participant list as \"Attio\" with the Attio logo. We've changed it so it shows up as \"AWC\" with the AWC logo instead. Clients on the call see a familiar name from your firm, not a third-party tool they don't recognize."
+        }
+      ]
+    },
+    {
+      "id": "where-to-find-it",
+      "heading": "Where to find it",
+      "blocks": [
+        {
+          "kind": "p",
+          "text": "Workspace settings (bottom-left, click your workspace name) → Call recorder. The Style is set to Workspace, which is what pulls in the AWC name and logo. You shouldn't need to change anything here — it's already configured."
+        }
+      ]
+    },
+    {
+      "id": "how-to-use-it",
+      "heading": "How to use it day-to-day",
+      "blocks": [
+        {
+          "kind": "ul",
+          "items": [
+            "When you schedule a call through a connected calendar, Attio offers to send the recorder. Accept it for calls where a transcript would be useful — discovery calls, scoping, post-engagement debriefs.",
+            "When the recorder joins, attendees see \"AWC\" in the participant list, not \"Attio\".",
+            "At the top of the call, read the consent language (see the recording consent item) so participants know they're being recorded.",
+            "After the call, the recording and transcript attach to the related Company and People records automatically. Open the Engagement or Company to find it under Activity."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "faq",
+      "heading": "FAQ",
+      "blocks": [
+        {
+          "kind": "p",
+          "text": "Q: Do clients know it's actually Attio under the hood?"
+        },
+        {
+          "kind": "p",
+          "text": "Not from the participant list — they just see AWC. If someone asks directly what the tool is, be honest: it's the recorder built into our CRM."
+        },
+        {
+          "kind": "p",
+          "text": "Q: Can I turn the recorder off for a specific call?"
+        },
+        {
+          "kind": "p",
+          "text": "Yes. When Attio prompts you to add the recorder to a meeting, decline. Or remove it from the calendar event before the call starts."
+        }
+      ]
+    }
+  ],
+  "gmail-calendar-sync": [
+    {
+      "id": "what-this-is",
+      "heading": "What this is",
+      "blocks": [
+        {
+          "kind": "p",
+          "text": "Attio watches your Gmail and Google Calendar in the background. Every email you send or receive with someone who has a Person record, and every meeting on your calendar with them, attaches itself to that Person, their Company, and any Engagement they're linked to. You stop logging contact manually. The activity timeline on every record fills itself in."
+        },
+        {
+          "kind": "p",
+          "text": "Right now Michelle's account is connected. Elaine, Emily, and Jill can each connect their own when ready, and the same automatic attachment will work for their email and meetings too."
+        }
+      ]
+    },
+    {
+      "id": "where-to-find-it",
+      "heading": "Where to find it",
+      "blocks": [
+        {
+          "kind": "p",
+          "text": "To connect your own account: top-right avatar → Workspace settings → Email and calendar accounts → Connect Google."
+        },
+        {
+          "kind": "p",
+          "text": "To see the result: open any Person or Company record. The right rail has an Activity block that lists emails and meetings in date order. The Communications tab on a Person shows the full thread view."
+        }
+      ]
+    },
+    {
+      "id": "how-to-use-it",
+      "heading": "How to use it day-to-day",
+      "blocks": [
+        {
+          "kind": "ul",
+          "items": [
+            "Before a discovery call, open the Company record. Scroll the Activity block to see every email thread and meeting across the AWC team for the last however-many months.",
+            "When a new contact emails you, check whether a Person record already exists. If they're someone you've emailed before, Attio created the record and attached the thread. If not, the next email you send them will create it.",
+            "On an Engagement record, the Activity block shows correspondence tied to the linked coachee, sponsor, and company. It's the cleanest way to catch up on a deal before a follow-up.",
+            "Sensitive threads (personal, internal, anything you don't want shared) can be marked private on the email itself inside Attio — click the lock icon on the thread."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "heads-up",
+      "heading": "Heads up",
+      "blocks": [
+        {
+          "kind": "callout",
+          "tone": "info",
+          "text": "Attio only auto-creates a new Person record when someone you've emailed (sent, not just received) doesn't already exist. That's deliberate — it keeps random newsletter senders and one-off cold pitches out of your contacts. If a contact is missing and you've only ever received from them, add them manually from the People view."
+        },
+        {
+          "kind": "p",
+          "text": "If a connection ever looks stale or stops pulling new messages, go back to Workspace settings → Email and calendar accounts and click Connect on the existing entry. Reconnecting doesn't erase anything; it just refreshes the token."
+        }
+      ]
+    }
+  ],
+  "configure-page-mode": [
+    {
+      "id": "what-this-is",
+      "heading": "What this is",
+      "blocks": [
+        {
+          "kind": "p",
+          "text": "Configure Page controls what every record of a given type looks like. Open a Company and rearrange the layout, and every other Company in the workspace picks up the same layout. Same for People and Engagements. It is one shared template per record type, not a per-user preference."
+        }
+      ]
+    },
+    {
+      "id": "how-to-use-it",
+      "heading": "How to use it",
+      "blocks": [
+        {
+          "kind": "steps",
+          "steps": [
+            "Open any record of the type you want to change. For Companies, that is left sidebar then Records then Companies, then click into any company.",
+            "Click the three dots in the top-right of the record header and choose Configure page.",
+            "Hover any block on the page to reveal its gear icon. Use it to remove the block or edit what fields it shows.",
+            "Drag blocks to reorder them. The right rail and main column are both editable.",
+            "Add a new block from the menu at the bottom of each column when you want something extra surfaced.",
+            "Click Save layout. The change applies to every record of that type for everyone in the workspace."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "heads-up",
+      "heading": "Heads up",
+      "blocks": [
+        {
+          "kind": "callout",
+          "tone": "warn",
+          "text": "Layout edits are workspace-wide and immediate. If Elaine trims the sidebar on a Company record, Michelle and Emily see the trimmed version next time they open any Company. Only admins or members with Full access to the object can save changes, so the four of you are the only people who can shift layouts around."
+        }
+      ]
+    },
+    {
+      "id": "try-it",
+      "heading": "Try it",
+      "blocks": [
+        {
+          "kind": "ul",
+          "items": [
+            "Open a Company, hit Configure page, and drag the Highlights block higher in the right rail so client status is the first thing you see.",
+            "On an Engagement record, remove a block you never look at. Save, then open a different Engagement to confirm the change carried over."
+          ]
+        }
+      ]
+    }
+  ],
+  "recording-consent-language": [
+    {
+      "id": "what-this-is",
+      "heading": "What this is",
+      "blocks": [
+        {
+          "kind": "p",
+          "text": "Two short blurbs you can paste into calendar invites so the other side knows the call may be recorded. Plus a setting recommendation that keeps coaching sessions from being recorded by mistake."
+        }
+      ]
+    },
+    {
+      "id": "how-to-use-it",
+      "heading": "How to use it",
+      "blocks": [
+        {
+          "kind": "p",
+          "text": "For biz dev calls (discovery, scoping, sponsor check-ins), paste one of these into the calendar invite description."
+        },
+        {
+          "kind": "p",
+          "text": "Long version, good for first-touch invites:"
+        },
+        {
+          "kind": "callout",
+          "tone": "info",
+          "text": "This meeting may be recorded for our internal note-taking and follow-up. The recording is stored privately in our CRM, accessible only to the AWC team, and used to draft accurate post-call follow-ups. If you'd prefer we not record, please let us know at the start of the call and we'll opt out."
+        },
+        {
+          "kind": "p",
+          "text": "Short version, fine for recurring or familiar invites:"
+        },
+        {
+          "kind": "callout",
+          "tone": "info",
+          "text": "Recording on (AWC CRM, internal use). Let us know at call start if you'd like to opt out."
+        },
+        {
+          "kind": "p",
+          "text": "If someone objects on the call, stop the recording from the meeting's Activity tab and delete it from the record afterward."
+        }
+      ]
+    },
+    {
+      "id": "coaching-calls",
+      "heading": "Coaching calls are different",
+      "blocks": [
+        {
+          "kind": "p",
+          "text": "Coaching sessions should never auto-record. The coachee is technically an external participant, but the content is confidential and not something we want sitting in the CRM."
+        },
+        {
+          "kind": "ul",
+          "items": [
+            "Auto-record for external meetings is OFF on every coach's account.",
+            "If a coach genuinely needs to record a biz dev call, they start it manually from the call's Activity tab using Start recording.",
+            "Coaches should not flip the auto-record setting back on, even temporarily. Manual start every time is the rule."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "faq",
+      "heading": "FAQ",
+      "blocks": [
+        {
+          "kind": "p",
+          "text": "Do I need consent in writing? No. Putting the language in the calendar invite, combined with a verbal check at the top of the call if anyone seems unsure, covers us for the kind of internal-use recording we're doing. If a client's legal team asks for something more formal, route that to Michelle."
+        },
+        {
+          "kind": "p",
+          "text": "What if someone joins late and misses the verbal heads-up? The invite description is the durable record of consent. If they raise it, offer to stop and delete; otherwise the invite language stands."
+        }
+      ]
+    }
+  ],
+  "engagement-types": [
+    {
+      "id": "what-this-is",
+      "heading": "What this is",
+      "blocks": [
+        {
+          "kind": "p",
+          "text": "Every engagement has a Type: PTC, Executive Coaching, Group Program, Speaking, or Consulting. The Type controls which fields actually matter. A PTC engagement needs leave dates and caregiver status. A Group Program needs an attendee count. A Speaking engagement needs neither. All the fields sit on the same record layout, but you only fill in the ones that fit the type."
+        }
+      ]
+    },
+    {
+      "id": "how-to-use",
+      "heading": "How to use it",
+      "blocks": [
+        {
+          "kind": "steps",
+          "steps": [
+            "Open the engagement and set Engagement Type first. That tells you which fields to look at.",
+            "If PTC: fill Approximate Baby Due Date, Expected Leave Date, Leave Type (Primary or Secondary Caregiver), and Leave Length.",
+            "If Group Program: fill Number of Attendees.",
+            "If Executive Coaching, Speaking, or Consulting: leave the PTC and attendee fields blank. They do not apply.",
+            "The Fee, Coach, Sponsors, and Company fields apply to every type. Always fill those."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "faq",
+      "heading": "FAQ",
+      "blocks": [
+        {
+          "kind": "p",
+          "text": "Q: What if an Executive Coaching engagement started as a PTC extension? Use Engagement Type \"Executive Coaching (Extended from PTC)\" and keep the original leave dates filled in. That preserves the history."
+        },
+        {
+          "kind": "p",
+          "text": "Q: A Group Program does not have one specific coachee. What goes in the Coachee field? Leave it blank. Group programs use Number of Attendees instead. The individual participants live in a separate Excel sheet Jill maintains."
+        }
+      ]
+    }
+  ]
+}
