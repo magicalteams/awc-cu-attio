@@ -105,6 +105,7 @@ export function ByTheNumbers() {
         </div>
 
         <ul
+          className="stat-grid"
           style={{
             listStyle: "none",
             padding: 0,
@@ -118,9 +119,8 @@ export function ByTheNumbers() {
           {stats.map((stat, i) => (
             <li
               key={stat.label}
-              className="reveal stat-card"
+              className={`reveal stat-card${stat.feature ? " stat-card--feature" : ""}`}
               style={{
-                gridColumn: stat.feature ? "span 2" : undefined,
                 animationDelay: `${i * 40}ms`,
               }}
             >
@@ -187,6 +187,14 @@ export function ByTheNumbers() {
           ))}
         </ul>
       </div>
+      <style>{`
+        /* Only let the feature card span 2 once the grid has room for 2 columns.
+           Below this width the grid resolves to 1 column and span 2 would force
+           a second implicit column → 200% width → horizontal overflow. */
+        @media (min-width: 560px) {
+          .stat-card--feature { grid-column: span 2; }
+        }
+      `}</style>
     </section>
   );
 }

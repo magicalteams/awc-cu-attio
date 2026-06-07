@@ -52,14 +52,7 @@ export function EngagementMix() {
   });
 
   return (
-    <div
-      style={{
-        display: "grid",
-        gridTemplateColumns: "auto minmax(0, 1fr)",
-        gap: "var(--space-6)",
-        alignItems: "center",
-      }}
-    >
+    <div className="engagement-mix-layout">
       <div style={{ position: "relative", width: SIZE, height: SIZE }}>
         <svg width={SIZE} height={SIZE} viewBox={`0 0 ${SIZE} ${SIZE}`}>
           {arcs.map(({ slice, path }, i) => (
@@ -140,6 +133,23 @@ export function EngagementMix() {
           </motion.li>
         ))}
       </ul>
+      <style>{`
+        .engagement-mix-layout {
+          display: grid;
+          gap: var(--space-6);
+          align-items: center;
+          /* Stacked by default (mobile / narrow card) */
+          grid-template-columns: minmax(0, 1fr);
+          justify-items: center;
+        }
+        /* Side-by-side once the parent container has room for donut + legend */
+        @container (min-width: 30rem) {
+          .engagement-mix-layout {
+            grid-template-columns: auto minmax(0, 1fr);
+            justify-items: stretch;
+          }
+        }
+      `}</style>
     </div>
   );
 }

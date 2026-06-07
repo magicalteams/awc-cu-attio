@@ -141,7 +141,21 @@ export function Hero() {
               Three sources feed Attio. Attio powers everything you use day-to-day.
             </div>
           </div>
-          <MigrationFlow />
+          {/* Horizontal scroll on narrow viewports so the diagram stays
+              readable at its natural proportions instead of squashing flat. */}
+          <div
+            style={{
+              overflowX: "auto",
+              overscrollBehaviorX: "contain",
+              WebkitOverflowScrolling: "touch",
+              marginInline: "calc(-1 * var(--space-2))",
+              paddingInline: "var(--space-2)",
+            }}
+          >
+            <div style={{ minInlineSize: "640px" }}>
+              <MigrationFlow />
+            </div>
+          </div>
         </div>
       </div>
     </header>
