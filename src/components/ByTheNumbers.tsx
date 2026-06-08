@@ -47,7 +47,7 @@ const stats: Stat[] = [
     tone: "orange",
   },
   {
-    value: "Oodles",
+    value: "Oodles of",
     label: "View configurations",
     caption: "Saved cuts of pipeline, history, tasks, and contacts — surface what matters most to you.",
     tone: "green",
