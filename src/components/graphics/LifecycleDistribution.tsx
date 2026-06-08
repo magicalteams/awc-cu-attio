@@ -4,16 +4,18 @@ import { motion, useReducedMotion } from "motion/react";
 
 type Row = { label: string; value: number; color: string; group: "selling" | "delivering" | "closed" };
 
+// Live distribution from the AWC Attio workspace (count by lifecycle_stage, 2026-06-07).
+// Sums to 1,024 — total opportunities.
 const rows: Row[] = [
-  { label: "Prospecting", value: 251, color: "#2E75B6", group: "selling" },
-  { label: "Re-Engagement", value: 38, color: "#2E75B6", group: "selling" },
-  { label: "Onboarding", value: 28, color: "#F37021", group: "delivering" },
-  { label: "Active", value: 46, color: "#F37021", group: "delivering" },
-  { label: "Completing", value: 24, color: "#F37021", group: "delivering" },
-  { label: "Completed", value: 571, color: "#2E7D32", group: "closed" },
-  { label: "Won", value: 14, color: "#2E7D32", group: "closed" },
-  { label: "Dead", value: 17, color: "#C0392B", group: "closed" },
-  { label: "Other", value: 35, color: "#8B95A5", group: "closed" },
+  { label: "Prospecting", value: 18, color: "#2E75B6", group: "selling" },
+  { label: "Re-Engagement", value: 53, color: "#2E75B6", group: "selling" },
+  { label: "Onboarding", value: 4, color: "#F37021", group: "delivering" },
+  { label: "Active", value: 45, color: "#F37021", group: "delivering" },
+  { label: "Completing", value: 2, color: "#F37021", group: "delivering" },
+  { label: "Completed", value: 575, color: "#2E7D32", group: "closed" },
+  { label: "Won", value: 22, color: "#2E7D32", group: "closed" },
+  { label: "Dead", value: 240, color: "#C0392B", group: "closed" },
+  { label: "Other", value: 65, color: "#8B95A5", group: "closed" },
 ];
 
 /** Horizontal bar chart showing engagement distribution by Lifecycle Stage. */

@@ -49,6 +49,16 @@ export function Footer() {
                 </a>
               </li>
               <li>
+                <a href="#how-we-got-here" className="hl-label" style={linkStyle}>
+                  How we got here
+                </a>
+              </li>
+              <li>
+                <a href="#what-you-asked-for" className="hl-label" style={linkStyle}>
+                  What you asked for
+                </a>
+              </li>
+              <li>
                 <a href="#what-your-team-can-do" className="hl-label" style={linkStyle}>
                   What your team can do
                 </a>
@@ -64,8 +74,28 @@ export function Footer() {
                 </a>
               </li>
               <li>
+                <a href="#try-before-call" className="hl-label" style={linkStyle}>
+                  Try before the call
+                </a>
+              </li>
+              <li>
                 <a href="#wrapping-up" className="hl-label" style={linkStyle}>
-                  What&apos;s wrapping up
+                  Wrapping up
+                </a>
+              </li>
+              <li>
+                <a href="#blocked-by-platform" className="hl-label" style={linkStyle}>
+                  Blocked by Attio
+                </a>
+              </li>
+              <li>
+                <a href="#discussed-and-decided" className="hl-label" style={linkStyle}>
+                  Discussed &amp; decided
+                </a>
+              </li>
+              <li>
+                <a href="#keep-it-running" className="hl-label" style={linkStyle}>
+                  Keep it running
                 </a>
               </li>
             </ul>

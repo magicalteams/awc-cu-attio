@@ -27,7 +27,7 @@ const stats: Stat[] = [
     tone: "blue",
   },
   {
-    value: 31,
+    value: 27,
     label: "Features shipped",
     caption: "Across schema, views, AI prompts, workflows, and integrations.",
     tone: "green",
@@ -39,7 +39,7 @@ const stats: Stat[] = [
     tone: "ink",
   },
   {
-    value: 45,
+    value: 44,
     suffix: "+",
     label: "Managers + EAs linked",
     caption:

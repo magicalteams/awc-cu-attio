@@ -4,10 +4,16 @@ import { useEffect, useState } from "react";
 
 const sections = [
   { id: "by-the-numbers", short: "Nums", label: "Numbers" },
+  { id: "how-we-got-here", short: "Arc", label: "Arc" },
+  { id: "what-you-asked-for", short: "Asks", label: "Your asks" },
   { id: "what-your-team-can-do", short: "Out", label: "Outcomes" },
   { id: "data-insights", short: "Data", label: "Data" },
   { id: "browse-by-track", short: "Build", label: "Build" },
+  { id: "try-before-call", short: "Try", label: "Try it" },
   { id: "wrapping-up", short: "WIP", label: "Wrapping up" },
+  { id: "blocked-by-platform", short: "Blkd", label: "Blocked" },
+  { id: "discussed-and-decided", short: "Disc", label: "Discussed" },
+  { id: "keep-it-running", short: "Hand", label: "Handoff" },
 ];
 
 /**

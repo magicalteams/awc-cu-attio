@@ -104,8 +104,8 @@ export function Hero() {
               gap: "var(--space-3)",
             }}
           >
-            <QuickStat value="~1,024" label="Engagements migrated" tone="orange" />
-            <QuickStat value="31" label="Features shipped" tone="blue" />
+            <QuickStat value="1,024" label="Engagements in Attio" tone="orange" />
+            <QuickStat value="27" label="Features shipped" tone="blue" />
             <QuickStat value="263+" label="Sponsors cleaned" tone="green" />
             <QuickStat value="9" label="Lifecycle stages" tone="ink" />
           </div>

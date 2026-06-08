@@ -66,9 +66,10 @@ export function DataInsights() {
                 Where the work is.
               </h3>
               <p className="hl-body" style={{ marginBlockStart: "var(--space-2)" }}>
-                Executive Coaching is the largest single category; Group Programs
-                and PTC together make up another sizable share. Indicative — actual
-                mix shifts as the year progresses.
+                PTC, Executive Coaching, and Speaking / Workshop are the three
+                largest service lines and together account for the majority of
+                engagements. Live from the workspace; 47 engagements without a
+                categorized type sit outside this chart.
               </p>
             </div>
             <EngagementMix />
@@ -81,9 +82,11 @@ export function DataInsights() {
                 Where engagements sit today.
               </h3>
               <p className="hl-body" style={{ marginBlockStart: "var(--space-2)" }}>
-                Indicative split across the unified Lifecycle Stage. Most engagements
-                are already in the completed archive; a healthy slice sits in
-                active delivery.
+                Live split across the unified Lifecycle Stage. The majority sit in
+                Completed (575) — the historical archive from ClickUp. Active
+                delivery is concentrated in Active and Onboarding (49 combined).
+                Prospecting is intentionally lean because Re-Engagement (53) holds
+                the longer-dormant leads.
               </p>
             </div>
             <LifecycleDistribution />

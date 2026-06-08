@@ -23,6 +23,20 @@ export const outstandingItems: OutstandingItem[] = [
       "Browser-extension install on Michelle and Emily's setups so they can clip LinkedIn profiles into Attio with one click. Will also help backfill missing Location data on People records by pulling profile info during normal browsing.",
   },
   {
+    id: "awaiting-response-from-view-surface",
+    title: "Surface Awaiting Response From on the default Pipeline view",
+    status: "in-progress",
+    description:
+      "The Awaiting Response From field is live on every pipeline card. Adding it as a visible column on the default Sales Pipeline view and walking through it on the call so the indicator starts getting used day-to-day.",
+  },
+  {
+    id: "coach-capacity-prompt",
+    title: "Coach Capacity stored prompt rewrite",
+    status: "in-progress",
+    description:
+      "The current prompt walks too many records and runs slow. Rewriting it to constrain scope — current quarter, named coach list, summary numbers only — so it returns in under ten seconds instead of timing out.",
+  },
+  {
     id: "task-attributes-check",
     title: "Confirming the new Task attributes belong on Tasks",
     status: "scoping",

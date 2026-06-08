@@ -245,7 +245,11 @@
       "blocks": [
         {
           "kind": "p",
-          "text": "Stage 6 on the Sales Pipeline used to be called Send SOW. It is now SOW Onboarding. The new name covers everything that happens around the SOW itself: drafting it, sending it, the SOW coming back signed, and the early kickoff work like scheduling the first call, assigning a coach, and running intake. It matches the language the team already uses in ClickUp, so nothing to relearn."
+          "text": "Stage 7 on the Sales Pipeline used to be called Send SOW. It is now SOW Signed / Onboarding. The new name covers what's actually happening at this point in the funnel: the SOW has come back signed and you're into the early kickoff work — scheduling the first call, assigning a coach, running intake. It matches the language the team already uses in ClickUp, so nothing to relearn."
+        },
+        {
+          "kind": "p",
+          "text": "Stage 6, sitting just before it, is Waiting for a Signed SOW — the SOW has gone out and you're waiting on signature. Together those two stages cover the period between proposal acceptance and active delivery."
         }
       ]
     },
@@ -256,11 +260,10 @@
         {
           "kind": "steps",
           "steps": [
-            "Open the Sales Pipeline from the left sidebar under Lists.",
-            "Move an engagement into SOW Onboarding the moment the SOW starts being drafted, not when it goes out the door.",
-            "Once Emily sees an engagement land in this column, that is her cue to set up the coaching delivery list and start the kickoff scheduling.",
-            "When the SOW is sent and you are waiting on signature, move it to Waiting for Signed SOW.",
-            "When it comes back signed and the engagement is fully kicked off, move it to Won."
+            "Open the Sales Pipeline from the left sidebar.",
+            "When the SOW goes out and you're awaiting signature, move the engagement into Waiting for a Signed SOW (stage 6).",
+            "When the SOW comes back signed, move it into SOW Signed / Onboarding (stage 7) — this is Emily's cue to set up the coaching delivery list and start kickoff scheduling.",
+            "Once the engagement is fully kicked off, move it to Won (stage 8). At that point the workflow adds it to Engagement History automatically and Emily picks it up there."
           ]
         }
       ]
@@ -271,11 +274,11 @@
       "blocks": [
         {
           "kind": "p",
-          "text": "Do I need to re-tag any old deals? No. Every engagement that was in Send SOW is now in SOW Onboarding automatically. Same column, new label."
+          "text": "Do I need to re-tag any old deals? No. Every engagement that was in Send SOW is now in SOW Signed / Onboarding automatically. Same column, new label."
         },
         {
           "kind": "p",
-          "text": "Should I use SOW Onboarding for the actual onboarding sessions with the coachee? No. Those are tracked in the Engagement History list once the deal is Won. SOW Onboarding is still the pre-signature stage, just stretched to cover the prep work Emily does in parallel."
+          "text": "Should I use SOW Signed / Onboarding for the actual onboarding sessions with the coachee? No. Those are tracked in the Engagement History list once the deal is Won. SOW Signed / Onboarding is the prep phase before delivery starts."
         }
       ]
     }
@@ -1061,7 +1064,7 @@
             "Open an Engagement record. The Manager field shows a linked Person — click through to see their email, title, and other engagements.",
             "On the coachee's Person record, the Manager field is filled in too, so you can see the reporting line from either direction.",
             "To find an EA, open the manager's Person record. If their EA is known, it shows in the Executive Assistant field.",
-            "To find everyone tagged as an EA, go left sidebar → Records → People, then filter Role Type contains Executive Assistant.",
+            "To find everyone tagged as an EA, go left sidebar → Records → People, then filter Role Type contains EA.",
             "Coachee titles are now on the Person record itself, not buried in engagement text. Sort or group by Job Title to see seniority across a book of work."
           ]
         }
@@ -1075,7 +1078,7 @@
           "kind": "ul",
           "items": [
             "Pull up a recent PTC engagement and confirm the Manager field links to a real Person. Click through and see if their EA is captured.",
-            "From left sidebar → Records → People, filter Role Type contains Executive Assistant. That's your scheduling rolodex."
+            "From left sidebar → Records → People, filter Role Type contains EA. That's your scheduling rolodex."
           ]
         }
       ]

@@ -22,9 +22,9 @@ const itemsWithoutSections: Omit<Item, "sections">[] = [
   },
   {
     id: "sow-onboarding-rename",
-    title: 'Stage #6: "SOW Onboarding"',
+    title: '"SOW Signed / Onboarding" — stage #7',
     summary:
-      'The pipeline stage that used to be "Send SOW" is now "SOW Onboarding" — the language Emily and Elaine actually use.',
+      'The pipeline stage that used to be "Send SOW" is now "SOW Signed / Onboarding" — Emily and Elaine\'s language. It sits at position #7, right after "Waiting for a Signed SOW."',
     track: "data-and-schema",
     benefit: "clean-pipeline",
     status: "shipped",

@@ -4,12 +4,16 @@ import { motion, useReducedMotion } from "motion/react";
 
 type Slice = { label: string; value: number; color: string };
 
+// Live distribution from the AWC Attio workspace (count by engagement_type, 2026-06-07).
+// 47 engagements without a categorized type are excluded; chart total = 977.
 const slices: Slice[] = [
-  { label: "Executive Coaching", value: 525, color: "#F37021" },
-  { label: "Group Programs", value: 250, color: "#2E75B6" },
-  { label: "PTC", value: 124, color: "#2E7D32" },
-  { label: "Speaking", value: 108, color: "#E67E22" },
-  { label: "Consulting", value: 17, color: "#C0392B" },
+  { label: "PTC", value: 281, color: "#2E7D32" },
+  { label: "Executive Coaching", value: 244, color: "#F37021" },
+  { label: "Speaking / Workshop", value: 234, color: "#E67E22" },
+  { label: "Sponsorship Program", value: 92, color: "#2E75B6" },
+  { label: "Cohort-Based Program", value: 62, color: "#5B9BD5" },
+  { label: "Consulting", value: 32, color: "#C0392B" },
+  { label: "Private Pay + Other", value: 32, color: "#8B95A5" },
 ];
 
 const SIZE = 240;
@@ -86,7 +90,7 @@ export function EngagementMix() {
               {total.toLocaleString()}
             </div>
             <div className="hl-overline-muted" style={{ marginTop: "var(--space-1)" }}>
-              Engagements
+              Categorized
             </div>
           </div>
         </div>

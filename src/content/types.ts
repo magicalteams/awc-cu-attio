@@ -70,6 +70,52 @@ export type Track = {
   blurb: string;
 };
 
+/** A direct quote from an AWC team member tied to a specific shipped solution. */
+export type ClientAsk = {
+  id: string;
+  /** What they were asking for, in their own words. */
+  quote: string;
+  /** Who said it + role. */
+  speaker: string;
+  /** When (display-friendly: "January 22 kickoff" or "May 22 email"). */
+  occasion: string;
+  /** What we built in response. 1-2 plain English sentences. */
+  builtSolution: string;
+  /** Concrete path in Attio. */
+  whereInAttio: string;
+  /** Optional: a short note tying back to evidence (a follow-up quote, the May 22 email, etc.). */
+  receipt?: string;
+};
+
+/** A pre-call test exercise — a 2-minute "try this in Attio" scenario. */
+export type Scenario = {
+  id: string;
+  title: string;
+  prerequisite?: string;
+  steps: string[];
+  whatToNotice: string;
+};
+
+/** An item discussed during the engagement and mutually decided to exclude. Neutral historical record. */
+export type DeferredItem = {
+  id: string;
+  title: string;
+  /** What was discussed, what was decided, when. Neutral tone, no sales hook. */
+  recordOfDecision: string;
+};
+
+/** A request that hit an Attio platform limit. Feature request filed; ships when Attio ships it. */
+export type BlockedItem = {
+  id: string;
+  title: string;
+  description: string;
+};
+
+export type TimelineEntry = {
+  date: string;
+  description: string;
+};
+
 export type OutstandingItem = {
   id: string;
   title: string;
