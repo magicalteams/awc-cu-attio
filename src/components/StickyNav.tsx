@@ -13,6 +13,7 @@ const sections = [
   { id: "wrapping-up", short: "WIP", label: "Wrapping up" },
   { id: "blocked-by-platform", short: "Blkd", label: "Blocked" },
   { id: "discussed-and-decided", short: "Disc", label: "Discussed" },
+  { id: "field-reference", short: "Ref", label: "Field ref" },
   { id: "keep-it-running", short: "Hand", label: "Handoff" },
 ];
 

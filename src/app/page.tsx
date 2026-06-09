@@ -9,6 +9,7 @@ import { Scenarios } from "@/components/Scenarios";
 import { OutstandingSection } from "@/components/OutstandingSection";
 import { BlockedByPlatform } from "@/components/BlockedByPlatform";
 import { DeferredSection } from "@/components/DeferredSection";
+import { SchemaReference } from "@/components/SchemaReference";
 import { MaintenanceSection } from "@/components/MaintenanceSection";
 import { Footer } from "@/components/Footer";
 import { StickyNav } from "@/components/StickyNav";
@@ -39,6 +40,7 @@ export default function Home() {
       <OutstandingSection items={outstandingItems} />
       <BlockedByPlatform items={blockedItems} />
       <DeferredSection items={deferredItems} />
+      <SchemaReference />
       <MaintenanceSection topics={maintenanceTopics} />
       <Footer />
     </main>
