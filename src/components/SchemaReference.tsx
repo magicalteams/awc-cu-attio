@@ -1,9 +1,5 @@
 import type { FieldKind, SchemaField, SchemaNode } from "@/content/schema-reference";
-import {
-  SCHEMA_PULLED_AT,
-  schemaDecisions,
-  schemaNodes,
-} from "@/content/schema-reference";
+import { SCHEMA_PULLED_AT, schemaNodes } from "@/content/schema-reference";
 
 const kindLabel: Record<FieldKind, string> = {
   status: "Status · ordered",
@@ -70,7 +66,6 @@ function Field({ field }: { field: SchemaField }) {
             {field.options.length} options
           </span>
         )}
-        {field.vet && <span className="tag tag-orange">Vet</span>}
       </div>
 
       {field.note && (
@@ -146,7 +141,7 @@ function NodeCard({ node, position }: { node: SchemaNode; position: number }) {
             className="hl-label"
             style={{ cursor: "pointer", color: "var(--text-muted)" }}
           >
-            Other fields on {node.name} ({node.otherFields.length}) — no options to vet
+            Other fields on {node.name} ({node.otherFields.length})
           </summary>
           <div style={{ display: "flex", flexWrap: "wrap", gap: "var(--space-2)", marginBlockStart: "var(--space-3)" }}>
             {node.otherFields.map((f) => (
@@ -172,7 +167,7 @@ function NodeCard({ node, position }: { node: SchemaNode; position: number }) {
 }
 
 /**
- * Field & status reference — the live schema laid out for vetting.
+ * Field & status reference — a plain inventory of the live schema.
  * Pulled from the Attio API; content lives in src/content/schema-reference.ts.
  */
 export function SchemaReference() {
@@ -198,22 +193,17 @@ export function SchemaReference() {
         >
           <div className="hl-overline">Field &amp; status reference</div>
           <h2 className="hl-h2">
-            <em>Vet every dropdown</em> against the language you use in ClickUp.
+            <em>Every object and attribute</em> in your workspace.
           </h2>
           <p className="hl-lead">
-            Every object, every select and status field, and the live options
+            Each object and list, every select and status field, and the options
             under each — pulled straight from the workspace on {SCHEMA_PULLED_AT}.
-            Walk each list and decide keep, rename, or drop. Fields tagged{" "}
-            <span className="tag tag-orange" style={{ verticalAlign: "middle" }}>
-              Vet
-            </span>{" "}
-            are the ones I'd flag for a decision.
           </p>
           <p className="hl-small" style={{ maxInlineSize: "64ch" }}>
             Status fields are the ordered lanes that drive the Kanban boards
             (numbered below). Selects are dropdown tags; multi-select means a
             record can hold several at once. Clearbit / Gmail enrichment and pure
-            system fields are left out — they have no options to debate.
+            system fields are left out.
           </p>
         </header>
 
@@ -221,55 +211,6 @@ export function SchemaReference() {
           {schemaNodes.map((node, i) => (
             <NodeCard key={node.id} node={node} position={i} />
           ))}
-        </div>
-
-        <div
-          className="surface reveal"
-          style={{
-            marginBlockStart: "var(--space-10)",
-            padding: "var(--space-8)",
-            display: "grid",
-            gap: "var(--space-5)",
-            background: "var(--bg-surface)",
-          }}
-        >
-          <div style={{ display: "grid", gap: "var(--space-2)" }}>
-            <div className="hl-overline">Bring these to the call</div>
-            <h3 className="hl-h4" style={{ margin: 0, fontSize: "var(--text-xl)" }}>
-              Six decisions to tee up
-            </h3>
-          </div>
-          <ol
-            style={{
-              listStyle: "none",
-              margin: 0,
-              padding: 0,
-              display: "grid",
-              gap: "var(--space-4)",
-            }}
-          >
-            {schemaDecisions.map((d, i) => (
-              <li
-                key={d.id}
-                style={{
-                  display: "grid",
-                  gridTemplateColumns: "auto minmax(0, 1fr)",
-                  columnGap: "var(--space-4)",
-                  alignItems: "baseline",
-                }}
-              >
-                <span
-                  className="hl-stat"
-                  style={{ fontSize: "var(--text-xl)", color: "var(--accent-primary)", lineHeight: 1 }}
-                >
-                  {String(i + 1).padStart(2, "0")}
-                </span>
-                <div className="hl-body" style={{ margin: 0, maxInlineSize: "72ch" }}>
-                  <strong>{d.question}.</strong> {d.detail}
-                </div>
-              </li>
-            ))}
-          </ol>
         </div>
       </div>
     </section>
